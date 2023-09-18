@@ -27,6 +27,7 @@ main {
 img {
   width: auto;
   max-height: 70px;
+  cursor: pointer;
 }
 .box-links {
   width: 100%;
