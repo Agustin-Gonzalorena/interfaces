@@ -6,6 +6,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "RobotoRegular";
+  display: flex;
+  flex-direction: column;
 }
 .header {
   width: 100%;
@@ -14,6 +16,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .btnBurger {
   height: 100%;
@@ -22,7 +25,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 7px;
   transition: all 1s ease;
   transform: rotate(0deg);
 }
@@ -35,7 +38,7 @@ body {
 }
 .burgerLines {
   height: 4px;
-  width: 40px;
+  width: 30px;
   border-radius: 20px;
   background-color: white;
 }
@@ -50,43 +53,54 @@ body {
 #bLine1.acti {
   transition: all 1s ease;
   transform: rotate(30deg) translate(8px, 3px);
-  width: 30px;
+  width: 20px;
 }
 #bLine3.acti {
   transition: all 1s ease;
   transform: rotate(-30deg) translate(8px, -3px);
-  width: 30px;
+  width: 20px;
 }
 
-.logoResposive {
+.boxLogoResposive {
   height: 100%;
-  width: 200px;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.logoResposive img,
+.boxLogoResposive img,
 a {
   width: auto;
   height: 100%;
 }
-.btnLogin {
+.boxCart {
   height: 100%;
   width: 80px;
+  display: grid;
+  place-items: center;
+}
+.boxCart img {
+  height: 30px;
+  width: auto;
 }
 /* Esto es para que no aparezca cuando cargo la pagina */
 .burgerDesplegableOff {
   display: none;
 }
-.burgerDesplegable {
+.burgerDesplegable,
+.burgerDesplegableA {
   height: 100vh;
   width: 200px;
+  margin-top: 80px;
   background-color: #242424;
   position: absolute;
-  display: none;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #333333 #999999;
 }
 .burgerDesplegable {
-  display: flex;
   opacity: 0;
   left: -200px;
   animation: fade-on 0.5s forwards;
@@ -109,16 +123,37 @@ a {
     transform: translateX(-200px);
   }
 }
-
+.registro {
+  height: 60px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 25px;
+}
+.perfil img {
+  height: 20px;
+  width: 20px;
+}
+.separador {
+  height: 2px;
+  background-color: white;
+  width: 100%;
+}
 .boxCategories {
   list-style: none;
-  width: 100%;
+  width: 150px;
   color: white;
-  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
   padding-left: 25px;
+  padding-bottom: 25px;
 }
 .boxCategories li {
   display: flex;
@@ -132,3 +167,64 @@ a {
   height: 20px;
   width: 20px;
 }
+.logo {
+  display: none;
+}
+.boxPeril {
+  display: none;
+}
+@media screen and (min-width: 660px) {
+  .btnBurger {
+    display: none;
+  }
+  .perfil,
+  .separador,
+  .registro {
+    display: none;
+  }
+  .logoResposive {
+    display: none;
+  }
+  .logo {
+    display: flex;
+  }
+  .boxLogoResposive {
+    padding-left: 25px;
+  }
+  .boxCartAndProfile {
+    width: 150px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .boxPeril {
+    display: flex;
+  }
+  .header {
+    position: fixed;
+  }
+  .burgerDesplegableA {
+    position: fixed;
+    margin-top: 80px;
+    height: 90vh;
+  }
+  main {
+    margin-top: 80px;
+    margin-left: 200px;
+    height: 800px;
+    width: 100%-200px;
+    background-color: red;
+  }
+  .burgerDesplegableA::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento en navegadores WebKit */
+  }
+
+  .burgerDesplegableA::-webkit-scrollbar-thumb {
+    background-color: #333333; /* Color del pulgar de la barra de desplazamiento en navegadores WebKit */
+  }
+
+  .burgerDesplegableA::-webkit-scrollbar-thumb:hover {
+    background-color: #555555; /* Color del pulgar de la barra de desplazamiento en hover en navegadores WebKit */
+  }
+}
+/* z-index para hacerlo desaparecer o usar js y esperar la animacion */

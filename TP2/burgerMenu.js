@@ -21,4 +21,10 @@ export const burgerMenu = () => {
     if (cont > 1)
       document.querySelector(".burgerDesplegable").classList.toggle("hide");
   });
+  if (window.screen.width > 660) {
+    burgerDesplegableOff.classList.replace(
+      "burgerDesplegableOff",
+      "burgerDesplegableA"
+    );
+  }
 };
