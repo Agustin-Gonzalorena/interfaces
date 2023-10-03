@@ -10,7 +10,7 @@ body {
 .header {
   width: 100%;
   height: 80px;
-  background-color: gray;
+  background-color: #242424;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,31 +23,51 @@ body {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  animation: scale 0.5s forwards;
+  transition: all 1s ease;
+  transform: rotate(0deg);
 }
 .btnBurger:hover {
-  scale: 1.1;
   cursor: pointer;
+}
+.btnBurger.acti {
+  transition: all 1s ease;
+  transform: rotate(90deg);
 }
 .burgerLines {
   height: 4px;
   width: 40px;
   border-radius: 20px;
-  background-color: black;
+  background-color: white;
 }
-.btnBurger.acti {
-  transform: rotate(90deg);
+#bLine1 {
+  transition: all 1s ease;
+  transform: rotate(0deg) translate(0px, 0px);
 }
-.logo {
+#bLine3 {
+  transition: all 1s ease;
+  transform: rotate(0deg) translate(0px, 0px);
+}
+#bLine1.acti {
+  transition: all 1s ease;
+  transform: rotate(30deg) translate(8px, 3px);
+  width: 30px;
+}
+#bLine3.acti {
+  transition: all 1s ease;
+  transform: rotate(-30deg) translate(8px, -3px);
+  width: 30px;
+}
+
+.logoResposive {
   height: 100%;
   width: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.logo img,
+.logoResposive img,
 a {
-  width: 100%;
+  width: auto;
   height: 100%;
 }
 .btnLogin {
@@ -61,7 +81,7 @@ a {
 .burgerDesplegable {
   height: 100vh;
   width: 200px;
-  background-color: red;
+  background-color: #242424;
   position: absolute;
   display: none;
 }
@@ -88,4 +108,27 @@ a {
     opacity: 0;
     transform: translateX(-200px);
   }
+}
+
+.boxCategories {
+  list-style: none;
+  width: 100%;
+  color: white;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-left: 25px;
+}
+.boxCategories li {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.boxCategories li:hover {
+  cursor: pointer;
+  transform: translate(10px);
+}
+.boxCategories span {
+  height: 20px;
+  width: 20px;
 }
