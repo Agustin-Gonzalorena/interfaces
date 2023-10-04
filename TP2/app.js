@@ -1,11 +1,47 @@
 "use strict";
+import { BurgerMenu } from "./components/BurgerMenu/BurgerMenu.js"; /* 
+import { CartMenu } from "./components/CartMenu/CartMenu.js";
+import { UserMenu } from "./components/UserMenu/UserMenu.js"; */
+import { apiCategories } from "./utils/apiCategories.js";
+BurgerMenu();
 
-import { burgerMenu } from "./burgerMenu.js";
-import { categories } from "./utils/apiCategories.js";
-burgerMenu();
-
-document.querySelector("#boxCategories").innerHTML = categories
+document.querySelector("#categories").innerHTML = apiCategories
   .map((category) => {
-    return `<li><span><img src=${category.img} alt="s"></span> ${category.name} </li>`;
+    return `<li class="category"><img
+    src=${category.img}
+    alt=${category.name}
+  /><p>${category.name}</p></li>`;
   })
   .join("");
+
+let btnCart = document.querySelector(".cart");
+let boxCart = document.querySelector(".box-cart");
+
+let btnUser = document.querySelector(".btn-user");
+let boxUser = document.querySelector(".box-user");
+
+const changeCart = () => {
+  if (window.innerWidth < 660) {
+    /* location.href = "/cart.html"; */
+    console.log("me fui al carrito");
+  } else {
+    if (boxUser.classList.contains("open")) {
+      changeUser();
+    }
+    boxCart.classList.toggle("open");
+  }
+};
+
+const changeUser = () => {
+  if (boxCart.classList.contains("open")) {
+    changeCart();
+  }
+  boxUser.classList.toggle("open");
+};
+
+btnUser.addEventListener("click", changeUser);
+btnCart.addEventListener("click", changeCart);
+
+document.querySelector(".btn-user-mobile").addEventListener("click", () => {
+  console.log("me fui al perfil");
+});

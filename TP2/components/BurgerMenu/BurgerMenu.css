@@ -1,0 +1,44 @@
+.btn-burger {
+  height: 30px;
+  position: relative;
+  transform: rotate(0deg);
+  cursor: pointer;
+  width: 40px;
+  left: 20px;
+}
+.btn-burger:hover {
+  color: #999;
+}
+.btn-burger i,
+.btn-burger i:after,
+.btn-burger i:before {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 40px;
+  background: white;
+  border-radius: 2px;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+.btn-burger i:after,
+.btn-burger i:before {
+  content: "";
+}
+.btn-burger i:after {
+  top: -32px;
+}
+.btn-burger i:before {
+  top: -16px;
+}
+.btn-burger i {
+  top: 32px;
+}
+.btn-burger.open i:after {
+  transform: rotate(45deg);
+  top: -22px;
+}
+.btn-burger.open i:before {
+  transform: rotate(-45deg);
+  top: -22px;
+}

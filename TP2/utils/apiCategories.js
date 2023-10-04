@@ -1,4 +1,4 @@
-export const categories = [
+export const apiCategories = [
   {
     id: 1,
     name: "2 jugadores",
@@ -73,5 +73,60 @@ export const categories = [
     id: 15,
     name: "Cartas",
     img: "./asset/img/IconsCategories/icon-cat-board-cards.svg",
+  },
+  {
+    id: 16,
+    name: "Pokemon",
+    img: "./asset/img/IconsCategories/icon-cat-collections-animeandmanga-pokemon.svg",
+  },
+  {
+    id: 17,
+    name: "Motos",
+    img: "./asset/img/IconsCategories/icon-cat-collections-motorcycles.svg",
+  },
+  {
+    id: 18,
+    name: "Pintar",
+    img: "./asset/img/IconsCategories/icon-cat-child-painting.svg",
+  },
+  {
+    id: 19,
+    name: "Guerra",
+    img: "./asset/img/IconsCategories/icon-cat-action-war.svg",
+  },
+  {
+    id: 20,
+    name: "Mario Bros",
+    img: "./asset/img/IconsCategories/icon-cat-classic-mariobros.svg",
+  },
+  {
+    id: 21,
+    name: "Vestir",
+    img: "./asset/img/IconsCategories/icon-cat-management-dressup.svg",
+  },
+  {
+    id: 22,
+    name: "Terror",
+    img: "./asset/img/IconsCategories/icon-cat-adventures-horror.svg",
+  },
+  {
+    id: 23,
+    name: "Escape",
+    img: "./asset/img/IconsCategories/icon-cat-adventures-escape.svg",
+  },
+  {
+    id: 24,
+    name: "Minecraft",
+    img: "./asset/img/IconsCategories/icon-cat-collections-minecraft.svg",
+  },
+  {
+    id: 25,
+    name: "Juegos .io",
+    img: "./asset/img/IconsCategories/icon-cat-io.svg",
+  },
+  {
+    id: 26,
+    name: "Piratas",
+    img: "./asset/img/IconsCategories/icon-cat-collections.svg",
   },
 ];
