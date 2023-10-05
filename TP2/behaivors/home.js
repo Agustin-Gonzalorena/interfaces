@@ -12,7 +12,7 @@ function loading() {
   async function updateProgressBar() {
     for (let i = 0; i <= 100; i++) {
       count.innerHTML = `<p>Cargando... %${i}</p>`;
-      await delay(50); // Esperar 50 ms antes de la siguiente iteración
+      await delay(5); // Esperar 50 ms antes de la siguiente iteración
     }
   }
 

@@ -13,7 +13,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  animation: spin 0.5s linear infinite;
+  animation: spin 0.4s linear infinite;
 }
 #right {
   top: -31px;

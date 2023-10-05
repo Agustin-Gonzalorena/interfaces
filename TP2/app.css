@@ -1,8 +1,17 @@
 @import url(./styles/BurgerMenu.css);
-
 @font-face {
   font-family: "RobotoRegular";
   src: url("./asset/fonts/Roboto/Roboto-Regular.ttf");
+}
+@font-face {
+  font-family: "RobotoMonoRegular";
+  src: url("./asset/fonts/Roboto_Mono/RobotoMono-Regular.ttf");
+}
+:root {
+  --color-fondo: #242424;
+  --color-primario: #72bf44;
+  --color-secundario: #da7d4e;
+  --color-acento: #9a378a;
 }
 body {
   margin: 0;
@@ -15,12 +24,11 @@ header {
   position: fixed;
   height: 70px;
   width: 100%;
-  background-color: #242424;
+  background-color: var(--color-fondo);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-
 .box-mini-logo {
   height: 100%;
   width: auto;
@@ -78,7 +86,7 @@ main {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: #242424;
+  background-color: var(--color-fondo);
   left: -200px;
   z-index: -1;
   opacity: 0;
@@ -137,9 +145,6 @@ main {
 .btn-user-mobile:active {
   scale: 1.2;
 }
-/* .box-search {
-  display: none;
-} */
 .box-search {
   margin-top: 20px;
   width: 100%;
@@ -167,21 +172,88 @@ main {
   padding: 20px;
 }
 .search:focus {
-  border: 3px solid #72bf44;
+  border: 3px solid var(--color-primario);
 }
 #boxSearch {
   display: none;
 }
+.box-user,
+.box-cart {
+  display: none;
+}
 footer {
   width: 100%;
-  height: 300px;
+  min-height: 300px;
   background-color: #242424;
-  display: grid;
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: white;
 }
+.description-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "RobotoMonoRegular";
+  padding: 20px;
+}
+.description-footer h3 {
+  margin: 10px;
+  font-size: 24px;
+  color: var(--color-primario);
+}
+.description-footer p {
+  margin: 0;
+  text-align: center;
+  font-size: 16px;
+}
+.description-footer p span {
+  color: var(--color-primario);
+}
+.btns-social {
+  width: 90%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#facebookBtn,
+#xBtn,
+#instagramBtn {
+  display: flex;
+  width: 100px;
+  justify-content: center;
+  gap: 5px;
+  color: white;
+  border: none;
+  font-family: "RobotoRegular";
+  padding: 5px 10px;
+  border-radius: 20px;
+  transition: all 0.1s ease;
+}
+#facebookBtn {
+  background-color: #1977f3;
+}
+#xBtn {
+  background-color: #000000;
+}
+#instagramBtn {
+  background-color: #e1306c;
+}
+#imgSocial img {
+  height: 15px;
+  width: 15px;
+}
+.infoFooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 13px;
+}
 /* ------Escritorio---- */
-
 @media screen and (min-width: 660px) {
   header {
     z-index: 5;
@@ -277,14 +349,15 @@ footer {
   .box-cart,
   .box-user {
     position: absolute;
-    width: 300px;
-    height: 300px;
+    min-width: 200px;
+    min-height: 100px;
+    height: auto;
     margin-top: 70px;
     z-index: -1;
     opacity: 0;
     top: -150px;
     border-radius: 0 0 20px 20px;
-    background-color: #242424;
+    background-color: var(--color-fondo);
     box-shadow: 0 0 15px 1px rgb(117, 117, 117);
     transition: all 0.4s ease;
   }
@@ -296,9 +369,134 @@ footer {
   }
   .box-user {
     right: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  .box-user ul {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .box-user li {
+    margin-bottom: 10px;
+    transition: all 0.1s ease;
+  }
+  .box-user li:hover {
+    cursor: pointer;
+    scale: 1.05;
+  }
+  .box-user a {
+    text-decoration: none;
+    color: white;
+    border-top: 2px solid white;
+  }
+  .box-user a:hover {
+    color: var(--color-primario);
+  }
+  .box-user p {
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
   }
   .box-cart {
     right: 70px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+  .cards-in-cart {
+    color: white;
+    list-style: none;
+    padding: 0;
+  }
+  .cards-in-cart li {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid white;
+  }
+  .cart-cards-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+  }
+  #fallGuys {
+    background-image: url("https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/2x1_NSwitchDS_FallGuys.jpg");
+  }
+  #csrRacing {
+    background-image: url("https://play-lh.googleusercontent.com/9444XLom5uCuPCIUuAtBGr8k92-_80ZU1j_7aPFEs6x9OX6x4pHAnmqY0h5encKBf7SE");
+  }
+  #fuegoYagua {
+    background-image: url("https://www2.minijuegosgratis.com/v3/games/thumbnails/17071_1.jpg");
+  }
+  .price-total-cart {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    color: white;
+  }
+  .price-total-cart p {
+    margin: 0;
+  }
+  .box-btns-cart {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  #emptyCart {
+    background-color: transparent;
+    color: var(--color-secundario);
+    border: 1px solid var(--color-secundario);
+  }
+  #emptyCart:hover {
+    cursor: pointer;
+    background-color: var(--color-secundario);
+    color: white;
+    scale: 1.2;
+  }
+  #buyBtn,
+  #emptyCart {
+    font-family: "RobotoRegular";
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: all 0.1s ease;
+  }
+  #buyBtn {
+    background-color: var(--color-primario);
+    border: none;
+  }
+  #buyBtn:hover {
+    cursor: pointer;
+    scale: 1.2;
+  }
+  footer {
+    width: calc(100vw - 215px);
+    margin-left: 200px;
+  }
+  .description-footer {
+    width: 900px;
+  }
+  .infoFooter {
+    width: 900px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .infoFooter p:hover {
+    cursor: pointer;
+  }
+  .btns-social {
+    width: 900px;
+    height: 70px;
+    justify-content: center;
+    gap: 20px;
+    transition: all 0.2s ease;
+  }
+  .btns-social button:hover {
+    cursor: pointer;
+    scale: 1.1;
   }
   .click-out {
     display: none;
