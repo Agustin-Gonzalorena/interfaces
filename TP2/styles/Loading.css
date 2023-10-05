@@ -1,0 +1,98 @@
+.loading-contain {
+  height: 100px;
+  width: 100px;
+  display: grid;
+  place-items: center;
+}
+.rueda {
+  width: 25px;
+  height: 25px;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: spin 0.5s linear infinite;
+}
+#right {
+  top: -31px;
+  right: -27px;
+}
+#left {
+  top: -57px;
+  left: -29px;
+}
+.reflejo {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 2px solid rgb(0, 0, 0);
+  border-left: 2px solid white;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.yoshi {
+  height: 100px;
+  width: auto;
+  animation: run 0.5s linear infinite;
+}
+@keyframes run {
+  0% {
+    transform: translateY(-2px);
+  }
+  25% {
+    transform: translateY(2px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+  75% {
+    transform: translateY(2px);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
+
+.speed-lines {
+  position: relative;
+  display: flex;
+  gap: 2px;
+  flex-direction: column;
+  top: 50px;
+  left: -50px;
+}
+.line1,
+.line2,
+.line3 {
+  width: 20px;
+  height: 1px;
+  background-color: #ffffff;
+}
+.line1 {
+  animation: line 0.5s linear infinite;
+}
+.line2 {
+  animation: line 0.8s linear infinite;
+}
+.line3 {
+  animation: line 0.3s linear infinite;
+}
+@keyframes line {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}

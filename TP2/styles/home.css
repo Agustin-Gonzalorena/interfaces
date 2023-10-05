@@ -1,0 +1,39 @@
+@import url(./Loading.css);
+.loader {
+  position: absolute;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 70px;
+  background-color: rgb(77, 77, 77);
+  flex-direction: column;
+  align-items: center;
+  padding-top: 200px;
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+.loader.close {
+  z-index: -1;
+  opacity: 0;
+}
+.count {
+  color: white;
+}
+.main {
+  display: none;
+}
+.main.open {
+  display: flex;
+  flex-direction: column;
+}
+.featured {
+  background-image: url("../asset/img/fondo-joy.png");
+  height: 300px;
+  width: 100%;
+}
+@media screen and (min-width: 660px) {
+  .loader {
+    margin-left: 200px;
+    width: calc(100vw - 215px);
+  }
+}
