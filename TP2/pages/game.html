@@ -130,11 +130,13 @@
         </section>
         <section class="featured">
           <section class="box-game">
-            <button class="btn-jugar">JUGAR</button>
+            <div class="blurGame">
+              <button class="btn-jugar">JUGAR</button>
+            </div>
           </section>
           <section class="box-intruction">
-            <div style="width: 70%;">
-            <h2>Instrucciones:</h2>
+            <div style="max-width: 70%">
+              <h2>Instrucciones:</h2>
               <p class="punteado">Elegí con que equipo queres jugar:</p>
               <div class="box-team">
                 <div>
@@ -147,65 +149,143 @@
                 </div>
               </div>
               <p class="punteado">Se juega con click izquierdo:</p>
-              <img style="height: 70px;" src="../asset/img/icons/iconMouse.png" >
-              <p class="punteado">Hace click en el casillero en el que quieras tirar tu ficha:</p>
-              <img style="height: 70px;" src="../asset/img/icons/iconClick3.png" >
-              <p class="punteado">Alineá 4 fichas de tu equipo  en vertical, horizontal o diagonal para GANAR!</p>
+              <img
+                style="height: 70px"
+                src="../asset/img/icons/iconMouse.png"
+              />
+              <p class="punteado">
+                Hace click en el casillero en el que quieras tirar tu ficha:
+              </p>
+              <img
+                style="height: 70px"
+                src="../asset/img/icons/iconClick3.png"
+              />
+              <p class="punteado">
+                Alineá 4 fichas de tu equipo en vertical, horizontal o diagonal
+                para GANAR!
+              </p>
             </div>
-          </div>
           </section>
         </section>
         <section class="cuerpo">
           <section class="leftCuerpo">
             <h2>Descripcion</h2>
-            <p class="description">Adéntrate en el mundo épico de los superhéroes de DC Comics con nuestro juego de 4 en línea: Batman vs Superman. En este emocionante desafío estratégico, los jugadores eligen su bando, ya sea el Caballero de la Noche, Batman, o el Hombre de Acero, Superman. Con el tablero en constante evolución, debes planificar tus movimientos cuidadosamente para conectar cuatro fichas de tu héroe antes que tu oponente.
-              Cada personaje tiene habilidades únicas que puedes desencadenar para cambiar el curso de la partida, desde la inteligencia táctica de Batman hasta la fuerza imparable de Superman. ¿Elegirás la astucia y la tecnología de Batman o la poderosa fuerza sobrehumana de Superman? ¡La elección es tuya!
-              ¿Tienes lo que se necesita para liderar a tu héroe hacia la victoria y demostrar quién es el verdadero campeón de DC Comics? Descubre quién prevalecerá en esta emocionante batalla en nuestro juego de 4 en línea: Batman vs Superman.</p>
+            <p class="description">
+              Adéntrate en el mundo épico de los superhéroes de DC Comics con
+              nuestro juego de 4 en línea: Batman vs Superman. En este
+              emocionante desafío estratégico, los jugadores eligen su bando, ya
+              sea el Caballero de la Noche, Batman, o el Hombre de Acero,
+              Superman. Con el tablero en constante evolución, debes planificar
+              tus movimientos cuidadosamente para conectar cuatro fichas de tu
+              héroe antes que tu oponente. Cada personaje tiene habilidades
+              únicas que puedes desencadenar para cambiar el curso de la
+              partida, desde la inteligencia táctica de Batman hasta la fuerza
+              imparable de Superman. ¿Elegirás la astucia y la tecnología de
+              Batman o la poderosa fuerza sobrehumana de Superman? ¡La elección
+              es tuya! ¿Tienes lo que se necesita para liderar a tu héroe hacia
+              la victoria y demostrar quién es el verdadero campeón de DC
+              Comics? Descubre quién prevalecerá en esta emocionante batalla en
+              nuestro juego de 4 en línea: Batman vs Superman.
+            </p>
             <div class="images">
               <div class="mini-images">
                 <div>
-                    <img id="btnSlide1" src="../asset/img/slider1.png">
-                    <img id="btnSlide2" src="../asset/img/slider2.png">
-                    <img id="btnSlide3" src="../asset/img/slider3.png">
-                    <img id="btnSlide5" src="../asset/img/slider5.png">
-                    <img id="btnSlide6" src="../asset/img/slider6.png">
-                    <img id="btnSlide4" src="../asset/img/slider4.png">
+                  <img
+                    id="btnSlide1"
+                    class="btnSlide activeBtnImg"
+                    src="../asset/img/slider1.png"
+                  />
+                  <img
+                    id="btnSlide2"
+                    class="btnSlide"
+                    src="../asset/img/slider2.png"
+                  />
+                  <img
+                    id="btnSlide3"
+                    class="btnSlide"
+                    src="../asset/img/slider3.png"
+                  />
+                  <img
+                    id="btnSlide5"
+                    class="btnSlide"
+                    src="../asset/img/slider5.png"
+                  />
+                  <img
+                    id="btnSlide4"
+                    class="btnSlide"
+                    src="../asset/img/slider4.png"
+                  />
+                  <img
+                    id="btnSlide6"
+                    class="btnSlide"
+                    src="../asset/img/slider6.png"
+                  />
                 </div>
               </div>
               <div class="separator-images"></div>
               <div class="primary-image">
-                  <img id="slide1"  class="slide openSlide" src="../asset/img/slider1.png">
-                  <img id="slide2" class="slide" src="../asset/img/slider2.png">
-                  <img id="slide3" class="slide" src="../asset/img/slider3.png">
-                  <img id="slide4" class="slide" src="../asset/img/slider4.png">
-                  <img id="slide5" class="slide" src="../asset/img/slider5.png">
-                  <img id="slide6" class="slide" src="../asset/img/slider6.png">
+                <img
+                  id="slide1"
+                  class="slide openSlide"
+                  src="../asset/img/slider1.png"
+                />
+                <img id="slide2" class="slide" src="../asset/img/slider2.png" />
+                <img id="slide3" class="slide" src="../asset/img/slider3.png" />
+                <img id="slide4" class="slide" src="../asset/img/slider4.png" />
+                <img id="slide5" class="slide" src="../asset/img/slider5.png" />
+                <img id="slide6" class="slide" src="../asset/img/slider6.png" />
               </div>
             </div>
             <section class="box-comments">
               <h2>Comentarios</h2>
               <div class="mi-comment">
-                <h4><img style="height: 25px;  margin-left: 10px;" src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp">  TÚ</h4>
+                <h4>
+                  <img
+                    style="height: 25px; margin-left: 10px"
+                    src="https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp"
+                  />
+                  TÚ
+                </h4>
                 <textarea placeholder="¿Que opinas de este juego?"></textarea>
               </div>
               <h3>Ultimos comentarios</h3>
               <div class="other-comments">
-                <h4><img style="height: 25px;  margin-left: 10px;" src="https://cdn-icons-png.flaticon.com/512/147/147142.png"> Juan Martin</h4>
-                <p>Me encanta este juego, lo juego con mi hijo todos los dias</p>
+                <h4>
+                  <img
+                    style="height: 25px; margin-left: 10px"
+                    src="https://cdn-icons-png.flaticon.com/512/147/147142.png"
+                  />
+                  Juan Martin
+                </h4>
+                <p>
+                  Me encanta este juego, lo juego con mi hijo todos los dias
+                </p>
               </div>
               <div class="other-comments">
-                <h4><img style="height: 25px;  margin-left: 10px;" src="https://cdn-icons-png.flaticon.com/512/147/147144.png"> Agustin</h4>
+                <h4>
+                  <img
+                    style="height: 25px; margin-left: 10px"
+                    src="https://cdn-icons-png.flaticon.com/512/147/147144.png"
+                  />
+                  Agustin
+                </h4>
                 <p>Es de mis juegos favoritos sin duda!</p>
               </div>
               <div class="other-comments">
-                <h4><img style="height: 25px; margin-left: 10px;" src="https://cdn.icon-icons.com/icons2/2643/PNG/512/male_boy_person_people_avatar_icon_159358.png"> Santiago</h4>
+                <h4>
+                  <img
+                    style="height: 25px; margin-left: 10px"
+                    src="https://cdn.icon-icons.com/icons2/2643/PNG/512/male_boy_person_people_avatar_icon_159358.png"
+                  />
+                  Santiago
+                </h4>
                 <p>Mi personaje favorito es superman.</p>
               </div>
             </section>
           </section>
           <div class="banner">
-            <img src="../asset/img/publicidadPs5.png" alt="publicidad">
-            <img src="../asset/img/cocaPublicidad.png" alt="publicidad">
+            <img src="../asset/img/publicidadPs5.png" alt="publicidad" />
+            <img src="../asset/img/cocaPublicidad.png" alt="publicidad" />
           </div>
         </section>
       </article>
@@ -255,7 +335,7 @@
         <p>Ayuda / Contacto / Publicitar / Privacidad / Terminos de Uso</p>
       </section>
     </footer>
-    
+
     <script type="module" src="../app.js"></script>
     <script type="module" src="../behaivors/game.js"></script>
   </body>

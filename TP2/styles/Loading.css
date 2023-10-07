@@ -3,6 +3,25 @@
   width: 100px;
   display: grid;
   place-items: center;
+  animation: wily 2s linear;
+  animation-delay: 2.5s;
+}
+@keyframes wily {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(-20deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 .rueda {
   width: 25px;

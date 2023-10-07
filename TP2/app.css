@@ -28,6 +28,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 5;
 }
 .box-mini-logo {
   height: 100%;
@@ -473,7 +474,7 @@ footer {
     scale: 1.2;
   }
   footer {
-    width: calc(100vw - 215px);
+    width: calc(100vw - 200px);
     margin-left: 200px;
     z-index: 5;
   }

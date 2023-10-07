@@ -30,10 +30,268 @@
   background-image: url("../asset/img/fondo-joy.png");
   height: 300px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
+.container-featured {
+  height: 90%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container-featured a {
+  text-decoration: none;
+  color: black;
+}
+.card1 {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  height: 250px;
+  width: 200px;
+  transition: scale 0.3s ease;
+}
+.card1:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+.box-card-img {
+  height: 200px;
+  width: 190px;
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.box-card-img img {
+  max-height: 190px;
+  max-width: 180px;
+  border-radius: 20px;
+}
+.box-card-text {
+  height: 50px;
+  width: 100%;
+  padding: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box-card-text h3 {
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card1.otra {
+  display: none;
+}
+.contain-seccion {
+  height: auto;
+  width: calc(100% - 60px);
+  padding: 10px 30px;
+  margin-bottom: 20px;
+}
+.carousel-body {
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Estilos generales del carrusel */
+.carousel {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 0px;
+}
+
+.card-contain {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth; /* Agrega un desplazamiento suave al carrusel */
+  gap: 16px; /* Espacio entre las tarjetas */
+  padding: 8px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  height: 160px;
+  width: 100px;
+  box-shadow: 0 0 5px 1px black;
+  transition: all 0.3s ease;
+}
+.card:hover {
+  cursor: pointer;
+  scale: 1.05;
+  box-shadow: 0 0 5px 2px var(--color-acento);
+}
+.card-img {
+  height: 150px;
+  border: 5px solid #fff;
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.card-img img {
+  max-height: 150px;
+  border-radius: 20px;
+}
+.card-text {
+  height: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card-text h3 {
+  margin: 0 10px;
+  font-size: small;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.moveLeft {
+  transform: rotate(-2deg);
+}
+.moveRight {
+  transform: rotate(2deg);
+}
+/* Estilos para los botones "Anterior" y "Siguiente" */
+.prev,
+.next {
+  background-color: transparent;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: none;
+}
+.prev:hover,
+.next:hover {
+  background-color: transparent;
+}
+
+/* Oculta la barra de desplazamiento horizontal en el carrusel */
+.card-contain::-webkit-scrollbar {
+  display: none;
+}
+
 @media screen and (min-width: 660px) {
   .loader {
     margin-left: 200px;
     width: calc(100vw - 215px);
+  }
+  .card1.otra {
+    display: flex;
+  }
+  .container-featured {
+    height: 90%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
+  .contain-seccion {
+    width: calc(100vw - 260px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .carousel-body {
+    height: 30px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  /* Estilos generales del carrusel */
+  .contain-carousel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  .carousel {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .card-contain {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth; /* Agrega un desplazamiento suave al carrusel */
+    gap: 50px; /* Espacio entre las tarjetas */
+    padding: 8px;
+  }
+  .card {
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    min-width: 150px;
+    width: 150px;
+  }
+  .card-img {
+    height: 190px;
+    width: 130px;
+  }
+  .card-text {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .card-text h3 {
+    margin: 0 10px;
+    font-size: medium;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .moveLeft {
+    transform: rotate(-2deg);
+  }
+  .moveRight {
+    transform: rotate(2deg);
+  }
+  /* Estilos para los botones "Anterior" y "Siguiente" */
+  .prev,
+  .next {
+    display: flex;
+    color: #000000;
+  }
+  .prev:hover,
+  .next:hover {
+    background-color: transparent;
   }
 }

@@ -68,7 +68,7 @@
   height: 20px;
   width: 20px;
   background-size: cover;
-  transition: all 0.5s ease;
+  transition: all 0.3 ease;
 }
 .meGusta {
   background-image: url("../asset/img/icons/meGusta.png");
@@ -84,10 +84,11 @@
   background-image: url("../asset/img/icons/noMeGustaRojo.png");
   cursor: pointer;
 }
-.meGusta,
+.meGusta:active,
 .noMeGusta:active {
   scale: 1.1;
 }
+
 .share {
   height: 20px;
   width: 20px;
@@ -117,9 +118,18 @@
   background-repeat: no-repeat;
   background-position: center;
   border-radius: 20px;
+  z-index: 1;
+}
+.blurGame {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  backdrop-filter: blur(5px);
+  z-index: 2;
 }
 .btn-jugar {
-  z-index: 2;
+  z-index: 3;
   width: 200px;
   height: 60px;
   position: relative;
@@ -131,8 +141,8 @@
   font-size: 20px;
   border-radius: 50px;
   cursor: pointer;
-  border: 1px solid #9a378a;
-  box-shadow: 0 0 15px 5px black;
+  border: 1px solid black;
+  box-shadow: 0 0 20px 5px black;
   transition: 0.5s;
 }
 .btn-jugar:hover {
@@ -156,7 +166,7 @@
   align-items: center;
   justify-content: center;
   color: white;
-  padding: 15px;
+  /* padding: 15px; */
   text-align: center;
 }
 .box-intruction h2 {
@@ -165,7 +175,7 @@
 }
 .box-intruction p {
   margin: 0px;
-  margin-top: 40px;
+  margin-top: 15%;
   margin-bottom: 5px;
   color: rgba(255, 255, 255, 0.9);
 }
@@ -216,13 +226,13 @@
 }
 .mini-images {
   height: 100%;
-  width: 60%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .mini-images div {
-  width: 60%;
+  max-width: 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -231,9 +241,16 @@
 .mini-images img {
   height: 100px;
   border-radius: 10px;
+  transition: all 0.2s ease;
 }
 .mini-images img:hover {
   cursor: pointer;
+}
+.mini-images img:active {
+  scale: 1.05;
+}
+.activeBtnImg {
+  box-shadow: 0 0 5px 2px var(--color-primario);
 }
 .separator-images {
   height: 100%;
@@ -252,6 +269,7 @@
   max-width: 400px;
   position: absolute;
   border-radius: 10px;
+  box-shadow: 1px 10px 15px rgba(0, 0, 0, 0.8);
 }
 .slide {
   opacity: 0;
