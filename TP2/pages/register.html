@@ -9,7 +9,7 @@
       type="image/svg+xml"
       href="../asset/img/icons/Logo-mini.svg"
     />
-    <link rel="stylesheet" href="../app.css" />
+    <link rel="stylesheet" href="../styles/register.css" />
   </head>
   <body>
     <header>
@@ -106,29 +106,88 @@
         </ul>
       </article>
       <article class="main">
-        <h1>Registro</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
-        <h1>Hola</h1>
+        <div class="oculto-register"></div>
+        <section class="container-register">
+          <div class="separator">
+            <img
+              class="icon-register"
+              src="../asset/img/icons/Logo-mini.svg"
+              alt="logo yoshi"
+            />
+          </div>
+          <div class="center-register">
+            <h2>Crea tu cuenta</h2>
+            <form action="">
+              <div>
+                <label for="name">Nombre y Apellido</label>
+                <input
+                  id="name"
+                  type="text"
+                  placeholder="Ariel Lopez"
+                  required
+                />
+              </div>
+              <div>
+                <label for="edad">Edad</label>
+                <input id="edad" type="text" placeholder="15" required />
+              </div>
+              <div>
+                <label for="email">Mail</label>
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="arielLopez@gmail.com"
+                  required
+                />
+              </div>
+              <div>
+                <label for="password">Contraseña</label>
+                <input
+                  id="password"
+                  type="password"
+                  placeholder="********"
+                  required
+                />
+              </div>
+              <div>
+                <label for="repitPassword">Repetir contraseña</label>
+                <input
+                  id="repitPassword"
+                  type="password"
+                  placeholder="********"
+                  required
+                />
+              </div>
+            </form>
+            <img
+              class="captcha"
+              src="https://cf-assets.www.cloudflare.com/slt3lc6tev37/79wsjD0Xy7FmmYvR0sCncy/5b732b7e26adb7d6c06d943d14dc4acd/not-a-robot.png"
+              alt="captcha"
+            />
+            <button class="btn-register">Registrarme</button>
+            <div
+              style="height: 2px; width: 100%; background-color: black"
+            ></div>
+            <button id="googleLogin" class="login-social">
+              <img
+                src="https://static-00.iconduck.com/assets.00/google-icon-2048x2048-czn3g8x8.png"
+              />
+              Registrarse con Google
+            </button>
+            <button id="facebookLogin" class="login-social">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Facebook_f_logo_%282019%29.svg/1024px-Facebook_f_logo_%282019%29.svg.png"
+              />Registrarse con Facebook
+            </button>
+            <div class="box-login">
+              <p>
+                Ya tienes unas cuenta? /
+                <span id="loginBtn">iniciar sesion</span>
+              </p>
+            </div>
+          </div>
+          <div class="separator"></div>
+        </section>
       </article>
     </main>
     <footer>
@@ -178,6 +237,7 @@
     </footer>
 
     <script type="module" src="../app.js"></script>
+    <script type="module" src="../behaivors/register.js"></script>
   </body>
   <div class="click-out"></div>
 </html>
