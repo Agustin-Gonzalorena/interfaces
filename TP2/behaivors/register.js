@@ -3,7 +3,7 @@ const registrado = () => {
   document.querySelector(".container-register").classList.add("open");
   console.log("first");
   setTimeout(() => {
-    window.location.href = "/TP2";
+    window.location.href = "../";
   }, 1000);
 };
 document.querySelector(".btn-register").addEventListener("click", registrado);
