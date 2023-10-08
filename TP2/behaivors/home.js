@@ -13,7 +13,7 @@ function loading() {
   async function updateProgressBar() {
     for (let i = 0; i <= 100; i++) {
       count.innerHTML = `<p>Cargando... %${i}</p>`;
-      await delay(50); // Esperar 50 ms antes de la siguiente iteración
+      await delay(5); // Esperar 50 ms antes de la siguiente iteración
     }
   }
 
@@ -60,48 +60,21 @@ function scrollCarousel(cant) {
     });
   });
 }
-scrollCarousel(400);
-
-document.querySelector("#adventure").innerHTML = apiGames
-  .filter((g) => {
-    return g.category_id == 3;
-  })
-  .map((g) => {
-    return `
-    <div class="card">
-    <div class="card-img" title="${g.name}">
-      <img
-      src="${g.img}"
-      alt="Imagen destacada"
-      />
-    </div>
+scrollCarousel(800);
+const card = (g, tipoEtiqueta, contenidoEtiqueta) => {
+  return `<div class="card">
+      <div class="etiqueta ${tipoEtiqueta}">${contenidoEtiqueta}</div>
+      <div class="card-img" title="${g.name}">
+        <img
+          src="${g.img}"
+          alt="Imagen destacada"
+        />
+      </div>
     <div class="card-text">
       <h3>${g.name}</h3>
       </div>
     </div>`;
-  })
-  .join("");
-
-document.querySelector("#rancing").innerHTML = apiGames
-  .filter((g) => {
-    return g.category_id == 4;
-  })
-  .map((g) => {
-    return `
-    <div class="card">
-    <div class="card-img" title="${g.name}">
-      <img
-      src="${g.img}"
-      alt="Imagen destacada"
-      />
-    </div>
-    <div class="card-text">
-      <h3>${g.name}</h3>
-      </div>
-    </div>`;
-  })
-  .join("");
-
+};
 document.querySelector("#offert").innerHTML = apiGames
   .filter((g) => {
     return g.discount == true;
@@ -110,17 +83,82 @@ document.querySelector("#offert").innerHTML = apiGames
     return a.name.localeCompare(b.name);
   })
   .map((g) => {
-    return `
-    <div class="card">
-    <div class="card-img" title="${g.name}">
-      <img
-      src="${g.img}"
-      alt="Imagen destacada"
-      />
-    </div>
-    <div class="card-text">
-      <h3>${g.name}</h3>
-      </div>
-    </div>`;
+    let tipoEtiqueta;
+    let contenidoEtiqueta = "hola";
+    if (g.discount == true) {
+      tipoEtiqueta = "enOferta";
+      contenidoEtiqueta = `<div class="box-etiqueta-oferta">
+                            <p class="price">$${g.price}</p>
+                            <p class="priceOffert">$${g.price * 0.8}</p>
+                          </div>
+                          <div class="addCart"></div>
+                          `;
+    } else if (g.price == 0) {
+      tipoEtiqueta = "gratis";
+      contenidoEtiqueta = "Gratis";
+    } else {
+      tipoEtiqueta = "normal";
+      contenidoEtiqueta = `$${g.price} <div class="addCart"></div>`;
+    }
+    return card(g, tipoEtiqueta, contenidoEtiqueta);
   })
   .join("");
+
+document.querySelector("#adventure").innerHTML = apiGames
+  .filter((g) => {
+    return g.category_id == 3;
+  })
+  .map((g) => {
+    let tipoEtiqueta;
+    let contenidoEtiqueta = "hola";
+    if (g.discount == true) {
+      tipoEtiqueta = "enOferta";
+      contenidoEtiqueta = `<div class="box-etiqueta-oferta">
+                            <p class="price">$${g.price}</p>
+                            <p class="priceOffert">$${g.price * 0.8}</p>
+                          </div>
+                          <div class="addCart"></div>
+                          `;
+    } else if (g.price == 0) {
+      tipoEtiqueta = "gratis";
+      contenidoEtiqueta = "Gratis";
+    } else {
+      tipoEtiqueta = "normal";
+      contenidoEtiqueta = `$${g.price} <div class="addCart"></div>`;
+    }
+    return card(g, tipoEtiqueta, contenidoEtiqueta);
+  })
+  .join("");
+
+document.querySelector("#racing").innerHTML = apiGames
+  .filter((g) => {
+    return g.category_id == 4;
+  })
+  .map((g) => {
+    let tipoEtiqueta;
+    let contenidoEtiqueta = "hola";
+    if (g.discount == true) {
+      tipoEtiqueta = "enOferta";
+      contenidoEtiqueta = `<div class="box-etiqueta-oferta">
+                            <p class="price">$${g.price}</p>
+                            <p class="priceOffert">$${g.price * 0.8}</p>
+                          </div>
+                          <div class="addCart"></div>
+                          `;
+    } else if (g.price == 0) {
+      tipoEtiqueta = "gratis";
+      contenidoEtiqueta = "Gratis";
+    } else {
+      tipoEtiqueta = "normal";
+      contenidoEtiqueta = `$${g.price} <div class="addCart"></div>`;
+    }
+    return card(g, tipoEtiqueta, contenidoEtiqueta);
+  })
+  .join("");
+
+let btnsAddCart = document.querySelectorAll(".addCart");
+btnsAddCart.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    btn.classList.toggle("open");
+  });
+});

@@ -88,14 +88,13 @@ main {
   height: 100vh;
   background-color: var(--color-fondo);
   left: -200px;
-  z-index: -1;
   opacity: 0;
   transition: all 0.5s ease;
 }
 .box-categories.open {
   left: 0;
   opacity: 1;
-  z-index: 1;
+  z-index: 2;
 }
 .box-categories ul {
   color: white;

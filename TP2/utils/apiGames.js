@@ -204,7 +204,7 @@ export const apiGames = [
     name: "Iracing",
     price: 0,
     img: "https://cdn.akamai.steamstatic.com/steam/apps/266410/header.jpg?t=1685469538",
-    discount: true,
+    discount: false,
     category_id: 4,
   },
   {

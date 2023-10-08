@@ -3,21 +3,22 @@
   width: 100px;
   display: grid;
   place-items: center;
-  animation: wily 2s linear;
+  animation: wily 2.5s linear;
   animation-delay: 2.5s;
+  transform-origin: 10% 100%;
 }
 @keyframes wily {
   0% {
     transform: rotate(0deg);
   }
   25% {
-    transform: rotate(-20deg);
+    transform: rotate(-25deg);
   }
   50% {
-    transform: rotate(-20deg);
+    transform: rotate(-25deg);
   }
   75% {
-    transform: rotate(-20deg);
+    transform: rotate(-25deg);
   }
   100% {
     transform: rotate(0deg);
@@ -88,6 +89,9 @@
   flex-direction: column;
   top: 50px;
   left: -50px;
+
+  animation: acomodarLineas 2.5s linear;
+  animation-delay: 2.5s;
 }
 .line1,
 .line2,
@@ -113,5 +117,22 @@
   100% {
     opacity: 0;
     transform: translateX(-50px);
+  }
+}
+@keyframes acomodarLineas {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(25deg);
+  }
+  75% {
+    transform: rotate(25deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }

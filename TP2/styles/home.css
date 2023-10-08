@@ -54,10 +54,14 @@
   height: 250px;
   width: 200px;
   transition: scale 0.3s ease;
+  box-shadow: 0 0 10px 1px rgb(255, 255, 255);
+  position: relative;
 }
 .card1:hover {
   cursor: pointer;
-  scale: 1.1;
+  scale: 1.05;
+  border: solid 1px var(--color-primario);
+  box-shadow: 0 0 10px 1px var(--color-primario);
 }
 .box-card-img {
   height: 200px;
@@ -121,7 +125,6 @@
   overflow-x: scroll;
   scroll-behavior: smooth; /* Agrega un desplazamiento suave al carrusel */
   gap: 16px; /* Espacio entre las tarjetas */
-  padding: 8px;
   width: 100%;
 }
 
@@ -134,11 +137,63 @@
   width: 100px;
   box-shadow: 0 0 5px 1px black;
   transition: all 0.3s ease;
+  margin: 10px 5px;
+  position: relative;
 }
 .card:hover {
   cursor: pointer;
   scale: 1.05;
   box-shadow: 0 0 5px 2px var(--color-acento);
+}
+.card:active {
+  scale: 0.95;
+  box-shadow: 0 0 5px 5px var(--color-acento);
+}
+.etiqueta {
+  display: flex;
+  position: absolute;
+  height: 30px;
+  max-width: 80%;
+  min-width: 70%;
+  width: auto;
+  top: 10px;
+  right: 0;
+  border-radius: 20px 0px 0px 20px;
+  box-shadow: 0 0 5px 1px white;
+  justify-content: space-between;
+  padding: 0 10px;
+  align-items: center;
+}
+.etiqueta.enOferta {
+  height: 40px;
+  background-color: var(--color-acento);
+}
+.box-etiqueta-oferta p {
+  margin: 0;
+}
+.price {
+  font-size: 10px;
+  text-decoration: line-through;
+}
+.etiqueta.gratis {
+  background-color: var(--color-primario);
+}
+.etiqueta.normal {
+  background-color: var(--color-secundario);
+}
+.addCart {
+  height: 25px;
+  width: 25px;
+  background-image: url("../asset/img/iconAdd.png");
+  background-size: cover;
+  transition: all 0.3s ease;
+}
+.addCart:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+.addCart.open {
+  background-image: url("../asset/img/iconEncarrito.png");
 }
 .card-img {
   height: 150px;
@@ -205,6 +260,10 @@
     margin-left: 200px;
     width: calc(100vw - 215px);
   }
+  .card1:active {
+    scale: 0.95;
+    box-shadow: 0 0 5px 5px var(--color-primario);
+  }
   .card1.otra {
     display: flex;
   }
@@ -229,6 +288,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: scale 1s ease;
+  }
+  .carousel-body p:hover {
+    cursor: pointer;
+  }
+  .carousel-body p:active {
+    scale: 0.95;
   }
   /* Estilos generales del carrusel */
   .contain-carousel {
