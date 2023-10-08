@@ -12,7 +12,7 @@ document.querySelector("#categories").innerHTML = apiCategories
   .join("");
 
 // Comportamiento de los botones de usuario y carrito
-let btnCart = document.querySelector(".cart");
+let btnCart = document.querySelector(".boxBtnCart");
 let boxCart = document.querySelector(".box-cart");
 let btnUser = document.querySelector(".btn-user");
 let boxUser = document.querySelector(".box-user");

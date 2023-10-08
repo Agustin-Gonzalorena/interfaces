@@ -76,10 +76,10 @@ header {
   height: 25px;
   transition: all 0.1s ease;
 }
-.cart:hover {
+.boxBtnCart:hover {
   cursor: pointer;
 }
-.cart:active {
+.boxBtnCart:active {
   scale: 1.2;
 }
 .countCart {
