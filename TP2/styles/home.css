@@ -149,11 +149,11 @@
 .etiqueta {
   display: flex;
   position: absolute;
-  height: 30px;
+  height: 35px;
   max-width: 80%;
   min-width: 70%;
   width: auto;
-  top: 10px;
+  top: 20px;
   right: 0;
   border-radius: 20px 0px 0px 20px;
   box-shadow: 0 0 5px 1px white;
@@ -162,8 +162,8 @@
   align-items: center;
 }
 .etiqueta.enOferta {
-  height: 40px;
-  background-color: var(--color-acento);
+  height: 35px;
+  background-color: #b258a4;
 }
 .box-etiqueta-oferta p {
   margin: 0;
