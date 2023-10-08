@@ -10,3 +10,4 @@ document.querySelector(".btn-register").addEventListener("click", registrado);
 document.querySelector("#facebookLogin").addEventListener("click", registrado);
 document.querySelector("#googleLogin").addEventListener("click", registrado);
 document.querySelector("#loginBtn").addEventListener("click", registrado);
+//yoshi
