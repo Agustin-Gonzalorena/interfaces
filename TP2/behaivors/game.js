@@ -19,7 +19,6 @@ function setActiveButton(buttonId) {
   });
 }
 
-// Asignar la función a los eventos click de los botones
 document.querySelector("#btnSlide1").addEventListener("click", () => {
   toggleSlide("slide1");
   setActiveButton("btnSlide1");

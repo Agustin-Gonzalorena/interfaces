@@ -13,6 +13,24 @@
   --color-secundario: #da7d4e;
   --color-acento: #9a378a;
 }
+/* Estilo de la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 10px;
+  background-color: #242424;
+}
+/* Estilo del control deslizante (la parte que puedes arrastrar) */
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 6px;
+}
+/* Cambiar el color de fondo de la barra de desplazamiento en hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+/* Estilo de la barra de desplazamiento cuando está en modo activo (arrastrando) */
+::-webkit-scrollbar-thumb:active {
+  background-color: #777;
+}
 body {
   margin: 0;
   padding: 0;
@@ -70,7 +88,6 @@ header {
 .btn-user {
   display: none;
 }
-/* ------Categorias------- */
 main {
   width: 100%;
   height: auto;
@@ -199,13 +216,13 @@ footer {
 }
 .description-footer h3 {
   margin: 10px;
-  font-size: 24px;
+  font-size: 20px;
   color: var(--color-primario);
 }
 .description-footer p {
   margin: 0;
   text-align: center;
-  font-size: 16px;
+  font-size: 12px;
 }
 .description-footer p span {
   color: var(--color-primario);
@@ -473,12 +490,18 @@ footer {
     scale: 1.2;
   }
   footer {
-    width: calc(100vw - 200px);
+    width: calc(100vw - 210px);
     margin-left: 200px;
     z-index: 5;
   }
   .description-footer {
     width: 900px;
+  }
+  .description-footer h3 {
+    font-size: 24px;
+  }
+  .description-footer p {
+    font-size: 16px;
   }
   .infoFooter {
     width: 900px;
@@ -498,6 +521,9 @@ footer {
   .btns-social button:hover {
     cursor: pointer;
     scale: 1.1;
+  }
+  .btns-social button:active {
+    scale: 0.95;
   }
   .click-out {
     display: none;

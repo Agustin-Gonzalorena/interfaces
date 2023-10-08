@@ -13,7 +13,7 @@ function loading() {
   async function updateProgressBar() {
     for (let i = 0; i <= 100; i++) {
       count.innerHTML = `<p>Cargando... %${i}</p>`;
-      await delay(5); // Esperar 50 ms antes de la siguiente iteración
+      await delay(50); // Esperar 50 ms antes de la siguiente iteración
     }
   }
 
@@ -60,9 +60,10 @@ function scrollCarousel(cant) {
     });
   });
 }
-scrollCarousel(800);
+scrollCarousel(600);
+
 const card = (g, tipoEtiqueta, contenidoEtiqueta) => {
-  return `<div class="card">
+  return `<div class="card" title=${g.name}>
       <div class="etiqueta ${tipoEtiqueta}">${contenidoEtiqueta}</div>
       <div class="card-img" title="${g.name}">
         <img

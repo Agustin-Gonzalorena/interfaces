@@ -20,7 +20,6 @@ let clickOut = document.querySelector(".click-out");
 
 const changeCart = () => {
   if (window.innerWidth < 660) {
-    /* location.href = "/cart.html"; */
     console.log("me fui al carrito");
   } else {
     if (boxUser.classList.contains("open")) {

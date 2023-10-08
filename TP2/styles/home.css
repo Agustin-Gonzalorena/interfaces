@@ -29,7 +29,7 @@
 .featured {
   background-image: url("../asset/img/fondo-joy.png");
   height: 300px;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -108,7 +108,6 @@
   justify-content: space-between;
   align-items: center;
 }
-/* Estilos generales del carrusel */
 .carousel {
   width: 100%;
   margin: 0 auto;
@@ -119,15 +118,13 @@
   position: relative;
   margin-bottom: 0px;
 }
-
 .card-contain {
   display: flex;
   overflow-x: scroll;
   scroll-behavior: smooth; /* Agrega un desplazamiento suave al carrusel */
-  gap: 16px; /* Espacio entre las tarjetas */
+  gap: 16px;
   width: 100%;
 }
-
 .card {
   display: flex;
   flex-direction: column;
@@ -228,7 +225,6 @@
 .moveRight {
   transform: rotate(2deg);
 }
-/* Estilos para los botones "Anterior" y "Siguiente" */
 .prev,
 .next {
   background-color: transparent;
@@ -258,7 +254,10 @@
 @media screen and (min-width: 660px) {
   .loader {
     margin-left: 200px;
-    width: calc(100vw - 215px);
+    width: calc(100vw - 210px);
+  }
+  .featured {
+    width: calc(100vw - 210px);
   }
   .card1:active {
     scale: 0.95;
@@ -276,7 +275,7 @@
     gap: 50px;
   }
   .contain-seccion {
-    width: calc(100vw - 260px);
+    width: calc(100vw - 270px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -296,7 +295,6 @@
   .carousel-body p:active {
     scale: 0.95;
   }
-  /* Estilos generales del carrusel */
   .contain-carousel {
     width: 100%;
     height: 100%;
@@ -310,12 +308,11 @@
     overflow: hidden;
     position: relative;
   }
-
   .card-contain {
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth; /* Agrega un desplazamiento suave al carrusel */
-    gap: 50px; /* Espacio entre las tarjetas */
+    gap: 50px;
     padding: 8px;
   }
   .card {
@@ -345,12 +342,11 @@
     text-overflow: ellipsis;
   }
   .moveLeft {
-    transform: rotate(-2deg);
+    transform: rotate(-5deg);
   }
   .moveRight {
-    transform: rotate(2deg);
+    transform: rotate(5deg);
   }
-  /* Estilos para los botones "Anterior" y "Siguiente" */
   .prev,
   .next {
     display: flex;
