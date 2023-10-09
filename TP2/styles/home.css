@@ -312,7 +312,7 @@
     display: flex;
     overflow-x: scroll;
     scroll-behavior: smooth; /* Agrega un desplazamiento suave al carrusel */
-    gap: 50px;
+    gap: 25px;
     padding: 8px;
   }
   .card {
