@@ -1,14 +1,16 @@
 class Casillero {
-  constructor(posX, posY, fill, context, width, height) {
+  constructor(posX, posY, fill, context, radio) {
     this.posX = posX;
     this.posY = posY;
     this.fill = fill;
     this.ctx = context;
-    this.width = width;
-    this.height = height;
+    this.radio = radio;
   }
   draw() {
-    this.ctx.fillStyle = this.fill;
-    this.ctx.fillRect(this.posX, this.posY, this.width, this.height);
+    this.ctx.fillStyle = " rgba(0, 0,0, 0.2)";
+    this.ctx.beginPath();
+    this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
+    this.ctx.fill();
+    this.ctx.closePath();
   }
 }
