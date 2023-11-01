@@ -21,33 +21,39 @@ function clearCanvas() {
 }
 
 //dibujar tablero
-let c1 = new Casillero(100, 100, "black", ctx, tamFicha);
+
+let t = new Tablero(6, 7, ctx);
+t.crear();
+t.draw();
 
 function agregarFichasRandom(num, tipo, color) {
   for (let i = 0; i < tamañoDeJuego / 2; i++) {
-    let ficha = new Ficha(
+    let f = new Ficha(
       Math.random() * 230 + num,
       height / 2 - 20 + (Math.random() * height - 20) / 2,
-      20,
+      25,
       color,
       ctx,
       tipo
     );
-    fichas.push(ficha);
+    fichas.push(f);
   }
 }
 agregarFichasRandom(850, 1, "red");
 agregarFichasRandom(20, 2, "black");
 
-function drawFigure() {
+function drawAll() {
   clearCanvas();
+  t.draw();
   for (let i = 0; i < fichas.length; i++) {
     fichas[i].draw();
   }
-  c1.draw();
+
+  let ficha = new Ficha(680, 475, 25, "orange", ctx, 1);
+  ficha.draw();
 }
 
-drawFigure();
+drawAll();
 function onMouseDown(e) {
   isMouseDown = true;
   if (lastClickedFigure != null) {
@@ -59,8 +65,7 @@ function onMouseDown(e) {
     clickFicha.setResaltado(true);
     lastClickedFigure = clickFicha;
   }
-  drawFigure();
-  console.log(lastClickedFigure);
+  drawAll();
 }
 
 function onMouseUp(e) {
@@ -71,7 +76,7 @@ function onMouseUp(e) {
 function onMouseMove(e) {
   if (isMouseDown && lastClickedFigure != null) {
     lastClickedFigure.setPosition(e.layerX, e.layerY);
-    drawFigure();
+    drawAll();
   }
 }
 function findClickedFicha(x, y) {

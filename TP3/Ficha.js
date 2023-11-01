@@ -16,6 +16,8 @@ class Ficha {
     this.ctx.beginPath();
     this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
     this.ctx.fill();
+    this.ctx.strokeStyle = "black";
+    this.ctx.lineWidth = 1;
     if (this.resaltado) {
       this.ctx.strokeStyle = "yellow";
       this.ctx.lineWidth = 5;
