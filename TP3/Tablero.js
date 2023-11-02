@@ -10,7 +10,6 @@ class Tablero {
   }
 
   crear() {
-    img.src = "../../TP3/img/humo.png";
     for (let i = 0; i < this.filas; i++) {
       this.m[i] = [];
       for (let j = 0; j < this.columnas; j++) {
@@ -35,7 +34,8 @@ class Tablero {
       if (this.m[fila][columna].getElemento() == "casillero") {
         let ultimaPosicion = this.m[fila][columna].getPosition();
         this.m[fila][columna] = ficha;
-        return ultimaPosicion;
+        ficha.setMove(false);
+        return [ultimaPosicion, fila, columna];
       }
       fila--;
     }
@@ -48,18 +48,11 @@ class Tablero {
     let unCasillero =
       this.m[0][1].getPosition()[0] - this.m[0][0].getPosition()[0];
     this.ctx.fillStyle = "rgba(0, 0, 0, 0.5)  ";
-    this.ctx.strokeStyle = "rgba(0, 0, 0, 0.6)";
+    this.ctx.strokeStyle = "rgba(55,55, 55, 0.8)";
     this.ctx.lineWidth = 15;
 
-    /*  this.ctx.fillRect(
-      this.posX - 25 - 10,
-      this.posY - 25 - 10,
-      finX - this.posX + 20 + unCasillero,
-      finY - this.posY + 20 + unCasillero
-    ); */
-
     this.ctx.drawImage(
-      img,
+      this.img,
       this.posX - 25 - 10,
       this.posY - 25 - 10,
       finX - this.posX + 20 + unCasillero,

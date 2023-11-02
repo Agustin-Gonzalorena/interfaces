@@ -11,13 +11,19 @@ class Ficha {
     this.disponible = true;
     this.ganadora = false;
   }
+  setMove(move) {
+    this.disponible = move;
+  }
+  getMove() {
+    return this.disponible;
+  }
   draw() {
     this.ctx.fillStyle = this.fill;
     this.ctx.beginPath();
     this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
     this.ctx.fill();
-    if (this.tipo == 1) this.ctx.strokeStyle = "black";
-    if (this.tipo == 2) this.ctx.strokeStyle = "white";
+    if (this.tipo == 2) this.ctx.strokeStyle = "black";
+    if (this.tipo == 1) this.ctx.strokeStyle = "grey";
     this.ctx.lineWidth = 1;
     if (this.resaltado) {
       this.ctx.strokeStyle = "yellow";
