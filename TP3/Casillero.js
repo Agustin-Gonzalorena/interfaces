@@ -6,7 +6,7 @@ class Casillero {
     this.radio = radio;
   }
   draw() {
-    this.ctx.fillStyle = " rgba(0, 0,0, 1)";
+    this.ctx.fillStyle = " rgba(0, 0,0, 0.4)";
     this.ctx.beginPath();
     this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
     this.ctx.fill();
@@ -14,5 +14,8 @@ class Casillero {
   }
   getPosition() {
     return [this.posX, this.posY];
+  }
+  getElemento() {
+    return "casillero";
   }
 }

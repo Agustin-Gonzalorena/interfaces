@@ -16,7 +16,8 @@ class Ficha {
     this.ctx.beginPath();
     this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
     this.ctx.fill();
-    this.ctx.strokeStyle = "black";
+    if (this.tipo == 1) this.ctx.strokeStyle = "black";
+    if (this.tipo == 2) this.ctx.strokeStyle = "white";
     this.ctx.lineWidth = 1;
     if (this.resaltado) {
       this.ctx.strokeStyle = "yellow";
@@ -35,11 +36,17 @@ class Ficha {
   setResaltado(resaltado) {
     this.resaltado = resaltado;
   }
+  getPosition() {
+    return [this.posX, this.posY];
+  }
   isPointInside(x, y) {
     //saber si el punto esta dentro de la figura
     let x1 = this.posX + this.radio / 2 - x;
     let y1 = this.posY + this.radio / 2 - y;
     let distancia = Math.sqrt(x1 * x1 + y1 * y1);
     return distancia < this.radio + 5;
+  }
+  getElemento() {
+    return "ficha";
   }
 }
