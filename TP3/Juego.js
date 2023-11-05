@@ -125,9 +125,10 @@ function reiniciarJuego() {
   lastClickedFigure = null;
   isMouseDown = false;
   turno = 1;
-  tiempo = 10;
+  tiempo = 1800;
   tiempoRestante = tiempo;
   intervalo;
+  clearInterval(intervalo);
 }
 
 function actualizarCuentaRegresiva() {
