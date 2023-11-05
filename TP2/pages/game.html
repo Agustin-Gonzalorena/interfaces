@@ -134,10 +134,49 @@
         <section class="featured">
           <section class="box-game">
             <canvas id="canvas" width="1100" height="600"></canvas>
-            <!-- <div class="blurGame">
-              <button class="btn-jugar">JUGAR</button>
-            </div> -->
+            <div class="resultGame">
+              <h1 id="titleResult"></h1>
+              <button id="resetGame" class="btn-jugar">Reiniciar</button>
+            </div>
+            <div class="blurGame">
+              <div class="selecGame">
+                <h3>Seleccionar un tipo de juego:</h3>
+                <div>
+                  <button class="btnGame selected" id="btn4L" disabled>
+                    4 en linea
+                  </button>
+                  <button class="btnGame" id="btn5L">5 en linea</button>
+                  <button class="btnGame" id="btn6L">6 en linea</button>
+                </div>
+              </div>
+              <div class="selecPlayer">
+                <h3 id="titlePlayer">Seleccionar jugador 1</h3>
+                <div>
+                  <img
+                    id="batmanP"
+                    class="imgSelectPlayer"
+                    src="../asset/imgCanvas/batman2_.png"
+                    alt=""
+                  />
+                  <img
+                    id="mujerMaravillaP"
+                    class="imgSelectPlayer"
+                    src="../asset/imgCanvas/mujermaravilla_.png"
+                    alt=""
+                  />
+                  <img
+                    id="supermanP"
+                    class="imgSelectPlayer"
+                    src="../asset/imgCanvas/superman2_.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <p class="errorGame"></p>
+              <button id="btnJugar" class="btn-jugar">JUGAR</button>
+            </div>
           </section>
+
           <section class="box-intruction">
             <div style="max-width: 70%">
               <h2>Instrucciones:</h2>
@@ -345,8 +384,8 @@
     <script src="../../TP3/Casillero.js"></script>
     <script src="../../TP3/Tablero.js"></script>
     <script src="../../TP3/Ficha.js"></script>
-    <script src="../../TP3/Jugador.js"></script>
-    <script src="../../TP3/Main.js"></script>
+    <script type="module" src="../../TP3/Juego.js"></script>
+    <script type="module" src="../../TP3/Main.js"></script>
   </body>
   <div class="click-out"></div>
 </html>

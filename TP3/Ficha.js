@@ -1,5 +1,5 @@
 class Ficha {
-  constructor(posX, posY, radio, fill, context, tipo) {
+  constructor(posX, posY, radio, fill, context, tipo, img) {
     this.posX = posX;
     this.posY = posY;
     this.fill = fill;
@@ -10,6 +10,7 @@ class Ficha {
     this.tipo = tipo;
     this.disponible = true;
     this.ganadora = false;
+    this.img = img;
   }
   setMove(move) {
     this.disponible = move;
@@ -18,22 +19,15 @@ class Ficha {
     return this.disponible;
   }
   draw() {
-    this.ctx.fillStyle = this.fill;
     this.ctx.beginPath();
-    this.ctx.arc(this.posX, this.posY, this.radio, 0, 2 * Math.PI);
-    this.ctx.fill();
-    if (this.tipo == 2) this.ctx.strokeStyle = "black";
-    if (this.tipo == 1) this.ctx.strokeStyle = "grey";
-    this.ctx.lineWidth = 1;
-    if (this.resaltado) {
-      this.ctx.strokeStyle = "yellow";
-      this.ctx.lineWidth = 5;
-    }
-    this.ctx.stroke();
+    this.ctx.drawImage(
+      this.img,
+      this.posX - this.radio - 1.2,
+      this.posY - this.radio - 1.2,
+      this.radio * 2.1,
+      this.radio * 2.1
+    );
     this.ctx.closePath();
-  }
-  position() {
-    return [this.posX, this.posY];
   }
   setPosition(posX, posY) {
     this.posX = posX;

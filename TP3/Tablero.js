@@ -14,8 +14,8 @@ class Tablero {
       this.m[i] = [];
       for (let j = 0; j < this.columnas; j++) {
         let c1 = new Casillero(
-          this.posX + j * 55,
-          this.posY + i * 55,
+          this.posX + j * 50,
+          this.posY + i * 50,
           this.ctx,
           25
         );
@@ -30,7 +30,6 @@ class Tablero {
   agregarFicha(ficha, columna) {
     let fila = this.filas - 1;
     while (fila >= 0) {
-      console.log(this.m[fila][columna].getElemento());
       if (this.m[fila][columna].getElemento() == "casillero") {
         let ultimaPosicion = this.m[fila][columna].getPosition();
         this.m[fila][columna] = ficha;
@@ -41,7 +40,9 @@ class Tablero {
     }
     return null;
   }
-
+  reiniciar() {
+    this.m = [];
+  }
   draw() {
     let finX = this.m[this.filas - 1][this.columnas - 1].getPosition()[0];
     let finY = this.m[this.filas - 1][this.columnas - 1].getPosition()[1];
