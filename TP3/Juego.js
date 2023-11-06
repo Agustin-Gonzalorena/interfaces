@@ -51,6 +51,7 @@ function drawAll(t) {
   ctx.fillStyle = "#ffffff";
   ctx.fillText("Turno jugador: " + turno, 10, 50);
   ctx.fillText(tiempoRestante, width - 100, 50);
+  btnReiniciar().draw();
 }
 
 export const startGame = (juegoSeleccionado, jugador1, jugador2) => {
@@ -358,6 +359,36 @@ function onMouseMove(e) {
   }
 }
 
+const btnReiniciar = () => ({
+  posX: width - 230,
+  posY: 25,
+  width: 100,
+  height: 30,
+  draw() {
+    ctx.fillStyle = "rgba(255, 255, 255, 0.5)  ";
+    ctx.fillRect(this.posX, this.posY, 100, 30);
+    ctx.font = "italic 20px Arial";
+    ctx.fillStyle = "#ffffff";
+    ctx.fillText("Reiniciar", this.posX + 10, this.posY + this.height - 6);
+  },
+  isPointInside(x, y) {
+    return !(
+      x <= this.posX ||
+      x > this.posX + this.width ||
+      y <= this.posY ||
+      y > this.posY + this.height
+    );
+  },
+});
+canvas.addEventListener("click", (e) => {
+  let btn = btnReiniciar();
+  if (btn.isPointInside(e.layerX, e.layerY)) {
+    finishGame(null);
+    reiniciarJuego();
+  } else {
+    return;
+  }
+});
 canvas.addEventListener("mousedown", onMouseDown);
 canvas.addEventListener("mouseup", onMouseUp);
 canvas.addEventListener("mousemove", onMouseMove);

@@ -14,8 +14,8 @@ class Tablero {
       this.m[i] = [];
       for (let j = 0; j < this.columnas; j++) {
         let c1 = new Casillero(
-          this.posX + j * 50,
-          this.posY + i * 50,
+          this.posX + j * 55,
+          this.posY + i * 55,
           this.ctx,
           25
         );
