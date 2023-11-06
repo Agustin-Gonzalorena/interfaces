@@ -1,4 +1,4 @@
-import { finishGame } from "./Main.js";
+import { finishGame, resetGame } from "./Main.js";
 let canvas = document.getElementById("canvas");
 let ctx = canvas.getContext("2d");
 let width = canvas.width;
@@ -383,7 +383,7 @@ const btnReiniciar = () => ({
 canvas.addEventListener("click", (e) => {
   let btn = btnReiniciar();
   if (btn.isPointInside(e.layerX, e.layerY)) {
-    finishGame(null);
+    resetGame();
     reiniciarJuego();
   } else {
     return;

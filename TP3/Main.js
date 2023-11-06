@@ -132,10 +132,10 @@ export const finishGame = (num) => {
   }
   document.querySelector("#titleResult").innerHTML = `Gano ${ganador}`;
 };
-
-document.querySelector("#resetGame").addEventListener("click", () => {
+export const resetGame = () => {
   document.querySelector(".blurGame").classList.remove("close");
   document.querySelector(".resultGame").classList.remove("open");
   document.querySelector(".resultGame").style.backgroundImage = "";
   volverASeleccionar();
-});
+};
+document.querySelector("#resetGame").addEventListener("click", resetGame);
