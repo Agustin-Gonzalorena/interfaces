@@ -226,70 +226,8 @@ const checkearVertical = (fila, columna, tipo) => {
   }
   return false;
 };
-const checkearDiagonal = (fila, columna, tipo) => {
-  let contador = 0;
-  let i = fila;
-  let j = columna;
-  while (i < filas && j < columnas) {
-    if (t.m[i][j].tipo == tipo) {
-      contador++;
-      if (contador == tipoJuego) {
-        return true;
-      }
-    } else {
-      contador = 0;
-    }
-    i++;
-    j++;
-  }
-  contador = 0;
-  i = fila;
-  j = columna;
-  while (i >= 0 && j >= 0) {
-    if (t.m[i][j].tipo == tipo) {
-      contador++;
-      if (contador == tipoJuego) {
-        return true;
-      }
-    } else {
-      contador = 0;
-    }
-    i--;
-    j--;
-  }
-  contador = 0;
-  i = fila;
-  j = columna;
-  while (i >= 0 && j < columnas) {
-    if (t.m[i][j].tipo == tipo) {
-      contador++;
-      if (contador == tipoJuego) {
-        return true;
-      }
-    } else {
-      contador = 0;
-    }
-    i--;
-    j++;
-  }
-  contador = 0;
-  i = fila;
-  j = columna;
-  while (i < filas && j >= 0) {
-    if (t.m[i][j].tipo == tipo) {
-      contador++;
-      if (contador == tipoJuego) {
-        return true;
-      }
-    } else {
-      contador = 0;
-    }
-    i++;
-    j--;
-  }
-  return false;
-};
-const verificarDiagonalDerecha = (fila, columna, tipo) => {
+
+const verificarDiagonalIzquierda = (fila, columna, tipo) => {
   let contador = 0;
   while (fila > 0 && columna > 0) {
     fila--;
@@ -310,15 +248,13 @@ const verificarDiagonalDerecha = (fila, columna, tipo) => {
 
   return false;
 };
-const verificarDiagonalIzquierda = (fila, columna, tipo) => {
+const verificarDiagonalDerecha = (fila, columna, tipo) => {
   let contador = 0;
   while (fila > 0 && columna < columnas - 1) {
     fila--;
     columna++;
-    console.log(fila, columna);
   }
   while (fila < filas && columna >= 0) {
-    console.log("hola");
     if (t.m[fila][columna].tipo == tipo) {
       contador++;
       if (contador == tipoJuego) {
@@ -348,11 +284,6 @@ const checkearGanador = (fila, columna) => {
       reiniciarJuego();
       return;
     }
-    /* if (checkearDiagonal(fila, columna, i)) {
-      finishGame(ganador);
-      reiniciarJuego();
-      return;
-    } */
     if (verificarDiagonalDerecha(fila, columna, i)) {
       finishGame(ganador);
       reiniciarJuego();
