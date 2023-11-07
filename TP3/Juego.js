@@ -315,8 +315,10 @@ const verificarDiagonalIzquierda = (fila, columna, tipo) => {
   while (fila > 0 && columna < columnas - 1) {
     fila--;
     columna++;
+    console.log(fila, columna);
   }
-  while (fila < filas && columna > 0) {
+  while (fila < filas && columna >= 0) {
+    console.log("hola");
     if (t.m[fila][columna].tipo == tipo) {
       contador++;
       if (contador == tipoJuego) {
