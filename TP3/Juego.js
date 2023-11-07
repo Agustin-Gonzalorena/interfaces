@@ -19,7 +19,10 @@ let tiempo = 1800;
 let tiempoRestante = tiempo;
 let intervalo;
 let t;
-
+let minutos = Math.floor(tiempo / 60);
+let segundos = tiempo % 60;
+let tiempoFormateado = minutos + ":" + (segundos < 10 ? "0" : "") + segundos;
+tiempoRestante = tiempoFormateado;
 //dibujar canvas
 ctx.fillStyle = "white";
 ctx.fillRect(0, 0, width, height);
@@ -50,11 +53,12 @@ function drawAll(t) {
   ctx.font = "italic 30px Arial";
   ctx.fillStyle = "#ffffff";
   ctx.fillText("Turno jugador: " + turno, 10, 50);
-  ctx.fillText(tiempoRestante, width - 100, 50);
+  ctx.fillText(tiempoFormateado, width - 100, 50);
   btnReiniciar().draw();
 }
 
 export const startGame = (juegoSeleccionado, jugador1, jugador2) => {
+  intervalo = setInterval(actualizarCuentaRegresiva, 1000);
   checkearTipoJuego(juegoSeleccionado);
   if (jugador1 == "batman") {
     agregarFichasRandom(20, 1, "black", imgFichaBatman);
@@ -71,7 +75,7 @@ export const startGame = (juegoSeleccionado, jugador1, jugador2) => {
     agregarFichasRandom(850, 2, "red", imgFichaMM);
   }
   t = crearTablero();
-  intervalo = setInterval(actualizarCuentaRegresiva, 1000);
+
   drawAll(t);
 };
 //auxiliares
@@ -133,9 +137,9 @@ function reiniciarJuego() {
 }
 
 function actualizarCuentaRegresiva() {
-  let minutos = Math.floor(tiempo / 60);
-  let segundos = tiempo % 60;
-  let tiempoFormateado = minutos + ":" + (segundos < 10 ? "0" : "") + segundos;
+  minutos = Math.floor(tiempo / 60);
+  segundos = tiempo % 60;
+  tiempoFormateado = minutos + ":" + (segundos < 10 ? "0" : "") + segundos;
   tiempoRestante = tiempoFormateado;
 
   if (tiempo === 0) {
@@ -232,6 +236,8 @@ const checkearDiagonal = (fila, columna, tipo) => {
       if (contador == tipoJuego) {
         return true;
       }
+    } else {
+      contador = 0;
     }
     i++;
     j++;
@@ -245,6 +251,8 @@ const checkearDiagonal = (fila, columna, tipo) => {
       if (contador == tipoJuego) {
         return true;
       }
+    } else {
+      contador = 0;
     }
     i--;
     j--;
@@ -258,6 +266,8 @@ const checkearDiagonal = (fila, columna, tipo) => {
       if (contador == tipoJuego) {
         return true;
       }
+    } else {
+      contador = 0;
     }
     i--;
     j++;
@@ -271,10 +281,54 @@ const checkearDiagonal = (fila, columna, tipo) => {
       if (contador == tipoJuego) {
         return true;
       }
+    } else {
+      contador = 0;
     }
     i++;
     j--;
   }
+  return false;
+};
+const verificarDiagonalDerecha = (fila, columna, tipo) => {
+  let contador = 0;
+  while (fila > 0 && columna > 0) {
+    fila--;
+    columna--;
+  }
+  while (fila < filas && columna < columnas) {
+    if (t.m[fila][columna].tipo == tipo) {
+      contador++;
+      if (contador == tipoJuego) {
+        return true;
+      }
+    } else {
+      contador = 0;
+    }
+    fila++;
+    columna++;
+  }
+
+  return false;
+};
+const verificarDiagonalIzquierda = (fila, columna, tipo) => {
+  let contador = 0;
+  while (fila > 0 && columna < columnas - 1) {
+    fila--;
+    columna++;
+  }
+  while (fila < filas && columna > 0) {
+    if (t.m[fila][columna].tipo == tipo) {
+      contador++;
+      if (contador == tipoJuego) {
+        return true;
+      }
+    } else {
+      contador = 0;
+    }
+    fila++;
+    columna--;
+  }
+
   return false;
 };
 const checkearGanador = (fila, columna) => {
@@ -292,7 +346,17 @@ const checkearGanador = (fila, columna) => {
       reiniciarJuego();
       return;
     }
-    if (checkearDiagonal(fila, columna, i)) {
+    /* if (checkearDiagonal(fila, columna, i)) {
+      finishGame(ganador);
+      reiniciarJuego();
+      return;
+    } */
+    if (verificarDiagonalDerecha(fila, columna, i)) {
+      finishGame(ganador);
+      reiniciarJuego();
+      return;
+    }
+    if (verificarDiagonalIzquierda(fila, columna, i)) {
       finishGame(ganador);
       reiniciarJuego();
       return;
