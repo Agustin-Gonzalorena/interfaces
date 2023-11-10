@@ -1,0 +1,82 @@
+.spidermanImg {
+  height: 100%;
+}
+.loadingSpiderman {
+  height: 500px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.titleLoading {
+  position: absolute;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 800;
+  font-family: "Courier New", Courier, monospace;
+}
+.boxLoading {
+  height: 500px;
+  position: relative;
+  animation: balanceo 5s linear;
+  transform-origin: 70% 0;
+}
+
+@keyframes balanceo {
+  0% {
+    transform: rotateZ(90deg);
+  }
+  50% {
+    transform: rotateZ(0deg);
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateZ(-90deg);
+    opacity: 0;
+  }
+}
+.speedLines {
+  position: absolute;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  top: 80%;
+  left: -50px;
+
+  animation: acomodarLineas 5s linear; /* 
+    animation-delay: 2.5s; */
+}
+.lines {
+  width: 40px;
+  height: 4px;
+  background-color: #ffffff;
+}
+#line1 {
+  animation: line 0.5s linear infinite;
+}
+#line2 {
+  animation: line 0.8s linear infinite;
+}
+#line3 {
+  animation: line 0.3s linear infinite;
+}
+@keyframes line {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+}
+@keyframes acomodarLineas {
+  80% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0;
+  }
+}

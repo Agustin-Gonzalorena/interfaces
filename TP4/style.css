@@ -1,0 +1,301 @@
+@font-face {
+  font-family: "Lato";
+  src: url(./asset/Fonts/Lato-Black.ttf);
+}
+* {
+  margin: 0;
+}
+.layerLoading {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+.layerLoading.close {
+  opacity: 0;
+  z-index: -1;
+}
+header {
+  position: fixed;
+  top: 0;
+  z-index: 9;
+  width: 100%;
+  height: 103px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+header.scrollHeader {
+  height: 115px;
+  background: linear-gradient(
+    180deg,
+    #5499f8 0%,
+    #5499f8 87.9%,
+    #5499f8 87.91%,
+    rgba(84, 153, 248, 0.91) 87.92%,
+    rgba(84, 153, 248, 0) 100%
+  );
+}
+.headerBox {
+  width: 1080px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.miniLogoBox {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.miniLogoBox img {
+  opacity: 0;
+}
+.menuBurger {
+  width: 200px;
+  height: 100%;
+  padding-top: 20px;
+  box-sizing: border-box;
+}
+.burgerBtn {
+  height: auto;
+  width: 34px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.3s ease;
+}
+.burgerBtn div {
+  height: 4px;
+  width: 100%;
+  background-color: #ffe901;
+  border-radius: 111px;
+  border: #2981ff solid 4px;
+  box-shadow: 4px 5px 0px 0px #02187e, 3px 6px 8px 4px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+.lineBurger.hover {
+  box-shadow: none;
+}
+.burgerBtn:hover {
+  cursor: pointer;
+  transform: translate(4px, 5px);
+}
+header img {
+  height: 68px;
+}
+.comprarBtnBox {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding-top: 20px;
+}
+.comprarBtn {
+  height: 50px;
+  width: 200px;
+  background-color: #ffe901;
+  border-radius: 111px;
+  border: 8px solid #2982ff;
+  box-sizing: content-box;
+  box-shadow: 4px 5px 0px 0px #02187e, 3px 6px 8px 4px rgba(0, 0, 0, 0.15);
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color: #02187e;
+  -webkit-text-stroke: #02187e 1px;
+  transition: all 0.3s ease;
+}
+.comprarBtn:hover {
+  cursor: pointer;
+  transform: translate(4px, 5px);
+  box-shadow: 0px 0px 0px 0px #02187e, 0px 0px 0px 0px rgba(0, 0, 0, 0.15);
+  background-color: rgb(252, 235, 48);
+  color: #203ec4;
+  -webkit-text-stroke: #203ec4 1px;
+}
+.comprarBtn:active {
+  scale: 0.9;
+}
+main {
+  overflow: hidden;
+}
+.section1 {
+  width: 100%;
+  height: 761px;
+  background-image: url(./asset/img/1-fondoNubes.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  padding-top: 103px;
+  position: relative;
+}
+.centerS1 {
+  /* background-color: rgb(190, 102, 102); */
+  /* border: 1px solid black; */
+  width: 1080px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+.edificioIzq {
+  width: 452px;
+  height: 720px;
+  background-image: url(./asset/img/1-edificioIzq.png);
+  position: absolute;
+  z-index: 1;
+  left: -53px;
+  bottom: 0;
+}
+.edificioCen {
+  width: 543.5px;
+  height: 213.5px;
+  background-image: url(./asset/img/1-edificioCen.png);
+  position: absolute;
+  z-index: 1;
+  bottom: 15px;
+}
+.edificioDer {
+  width: 374px;
+  height: 727.5px;
+  background-image: url(./asset/img/1-edificioDer.png);
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+}
+.logoBox {
+  width: 590px;
+  height: 301px;
+  position: relative;
+  z-index: 10;
+}
+.logoBox img {
+  width: 100%;
+  height: 100%;
+}
+.spidersBox {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.spidersBox img {
+  width: 100%;
+  height: 100%;
+}
+.spiderWhite {
+  position: absolute;
+  top: -10px;
+  left: -13px;
+  width: 360px;
+  height: 444px;
+  background-image: url(./asset/img/1-spidermanWhite.png);
+}
+.spiderNormal {
+  position: relative;
+  left: 330px;
+  top: 20px;
+  height: 465px;
+  width: 465px;
+  background-image: url(./asset/img/1-spidermanNormal.png);
+}
+.spiderBlack {
+  position: absolute;
+  left: 630px;
+  top: -60px;
+  height: 393px;
+  width: 393px;
+  background-image: url(./asset/img/1-spidermanBlack.png);
+}
+.telaIzq {
+  position: absolute;
+  top: -200px;
+  left: -400px;
+  width: 450.817px;
+  height: 1227.274px;
+  transform: rotate(65.403deg);
+  background-image: url(./asset/img/telaIzq2.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  z-index: 4;
+}
+.telaDer {
+  position: absolute;
+  width: 600px;
+  height: 1300px;
+  background-image: url(./asset/img/telaDer2.png);
+  transform: rotate(114.597deg);
+  top: -430px;
+  left: 1345px;
+}
+/*----section 2----*/
+.section2 {
+  position: relative; /* 
+  background-color: red; */
+  width: 100%;
+  height: 950px;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+}
+.fondoVioleta {
+  position: absolute;
+  z-index: 1;
+  top: -90px;
+  width: 100%;
+  height: 845px;
+  background-color: #8f6aa6;
+  clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+}
+.centerS2 {
+  width: 1080px;
+  height: 100%;
+  z-index: 2;
+  padding-top: 20px;
+  position: relative;
+}
+.textS2 {
+  width: 646px;
+  color: white;
+}
+.textS2 h2 {
+  font-family: "Lato";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 94.5%; /* 56.7px */
+  margin-bottom: 24px;
+}
+.textS2 p {
+  margin-bottom: 25px;
+  width: 580px;
+  font-size: 20px;
+}
+
+.imgBoxS2 {
+  width: 751.649px;
+  height: 413.131px;
+  transform: rotate(-2.222deg);
+  border-radius: 26px;
+  border: 9px solid #fff;
+  background-image: url(./asset/img/imgS2.png);
+
+  /* Drop Shadow */
+  box-shadow: 30px 6px 8px 4px rgba(0, 0, 0, 0.15);
+}
+.duendeVerde {
+  position: absolute;
+  width: 553px;
+  height: 921px;
+  background-image: url(./asset/img/duendeVerde.png);
+  top: -100px;
+  right: -120px;
+}
