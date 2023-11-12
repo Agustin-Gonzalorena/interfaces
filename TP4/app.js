@@ -25,6 +25,6 @@ document.addEventListener("scroll", () => {
   } else {
     header.classList.remove("scrollHeader");
   }
-  logo.style.opacity = 1 - window.scrollY / 160;
+  logo.style.opacity = 1 - window.scrollY / 120;
   logo.style.scale = 1 - window.scrollY / 200;
 });
