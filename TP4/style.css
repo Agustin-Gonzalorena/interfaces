@@ -142,7 +142,7 @@ main {
 }
 .centerS1 {
   /* background-color: rgb(190, 102, 102); */
-  /* border: 1px solid black; */
+  border: 1px solid black;
   width: 1080px;
   height: 100%;
   display: flex;
@@ -265,6 +265,7 @@ main {
   z-index: 2;
   padding-top: 20px;
   position: relative;
+  border: 1px solid black;
 }
 .textS2 {
   width: 646px;
@@ -276,7 +277,7 @@ main {
   font-size: 60px;
   font-style: normal;
   font-weight: 600;
-  line-height: 94.5%; /* 56.7px */
+  line-height: 94.5%;
   margin-bottom: 24px;
 }
 .textS2 p {
@@ -334,6 +335,9 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 23.31px;
+  opacity: 0;
+  transform: translate(0px, 100px);
+  transition: all 0.5s ease-in;
 }
 .cardsPersonajes div {
   width: 332.96px;
@@ -343,6 +347,19 @@ main {
   /* Drop Shadow */
   box-shadow: 4px 5px 0px 0px #02187e;
   box-sizing: border-box;
+}
+#cardP1 {
+  transition-delay: 0.5s;
+}
+#cardP2 {
+  transition-delay: 0.7s;
+}
+#cardP3 {
+  transition-delay: 0.9s;
+}
+.cardAnim {
+  opacity: 1;
+  transform: translate(0px, 0px);
 }
 .imgCardP1 {
   background-image: url(./asset/img/cardP1.png);
@@ -425,9 +442,131 @@ main {
 }
 .fondoS5 {
   position: absolute;
+  z-index: 1;
   top: -100px;
   width: 100%;
   height: 100%;
   background-color: #000;
   clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 85%);
+}
+.centerS5 {
+  width: 1080px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  z-index: 2;
+  padding-top: 140px;
+  box-sizing: border-box;
+  gap: 55.11px;
+}
+.centerS5 h2 {
+  width: 667px;
+  color: #fff;
+  font-family: "latoregular";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 94.5%;
+}
+.boxFondoS5 {
+  position: relative;
+  width: 100%;
+  height: 527.626px;
+  display: flex;
+}
+.fondoS5-1 {
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-image: url(./asset/img/fondoS5.png);
+  background-size: cover;
+}
+.fondoS5-2 {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background-image: url(./asset/img/fondoS5-2.png);
+  background-size: cover;
+}
+.flacucho {
+  position: relative;
+  top: -55px;
+  left: 80px;
+  z-index: 4;
+  width: 451.258px;
+  height: 591.442px;
+  transform: rotate(-12.483deg);
+  background-image: url(./asset/img/flacucho.png);
+}
+.panteraNegra {
+  position: relative;
+  z-index: 4;
+  top: -220px;
+  left: 55px;
+  width: 368.308px;
+  height: 552.462px;
+  transform: rotate(13.615deg);
+  background-image: url(./asset/img/pantera.png);
+}
+.hulk {
+  position: absolute;
+  z-index: 4;
+  top: 125px;
+  right: -25px;
+  width: 410.106px;
+  height: 437.972px;
+  transform: rotate(7.515deg);
+  background-image: url(./asset/img/hulk.png);
+}
+.hojitas {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-image: url(./asset/img/fondoS5-3.png);
+  background-size: cover;
+}
+
+/*----section 6----*/
+.section6 {
+  width: 100%;
+  height: 1300px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  background-color: red;
+}
+.centerS6 {
+  width: 1080px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  background-color: violet;
+}
+.contenidoS6 {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #02187e;
+  position: relative;
+}
+.boxImgS6 {
+  width: 50%;
+  height: 100%;
+  background-color: #027e02;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+.imgS6 {
+  width: 100%;
+  height: 400px;
+  border: #000 solid 1px;
+  position: sticky;
+  top: 0;
 }

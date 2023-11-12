@@ -28,3 +28,12 @@ document.addEventListener("scroll", () => {
   logo.style.opacity = 1 - window.scrollY / 120;
   logo.style.scale = 1 - window.scrollY / 200;
 });
+
+document.addEventListener("scroll", () => {
+  console.log(window.scrollY);
+  if (window.scrollY > 1400) {
+    document.querySelector("#cardP1").classList.add("cardAnim");
+    document.querySelector("#cardP2").classList.add("cardAnim");
+    document.querySelector("#cardP3").classList.add("cardAnim");
+  }
+});
