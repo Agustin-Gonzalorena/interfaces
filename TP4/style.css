@@ -142,7 +142,7 @@ main {
 }
 .centerS1 {
   /* background-color: rgb(190, 102, 102); */
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 1080px;
   height: 100%;
   display: flex;
@@ -265,7 +265,7 @@ main {
   z-index: 2;
   padding-top: 20px;
   position: relative;
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .textS2 {
   width: 646px;
@@ -308,8 +308,8 @@ main {
   width: 553px;
   height: 921px;
   background-image: url(./asset/img/duendeVerde.png);
-  top: -100px;
-  right: -120px;
+  top: -58px;
+  right: -105px;
 }
 
 /*----section 3----*/
@@ -533,7 +533,7 @@ main {
 /*----section 6----*/
 .section6 {
   width: 100%;
-  height: 1300px;
+  height: auto;
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
@@ -549,24 +549,47 @@ main {
 }
 .contenidoS6 {
   width: 100%;
-  height: 100%;
+  height: 1650px;
   display: flex;
   justify-content: space-between;
   background-color: #02187e;
-  position: relative;
 }
 .boxImgS6 {
-  width: 50%;
-  height: 100%;
+  width: 552px;
+  height: 1650px;
   background-color: #027e02;
   display: flex;
   flex-direction: column;
   position: absolute;
 }
+.boxImg2 {
+  width: 100%;
+  height: auto;
+  position: sticky;
+  top: 300px;
+  background-color: #2981ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .imgS6 {
   width: 100%;
-  height: 400px;
+  height: 302px;
   border: #000 solid 1px;
-  position: sticky;
-  top: 0;
+}
+.boxTexto {
+  position: relative;
+  left: 601px;
+  width: 467px;
+  height: auto;
+  background-color: #ffe901;
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  box-sizing: border-box;
+}
+.boxTexto div {
+  width: 100%;
+  height: 350px;
+  background-color: #000;
 }
