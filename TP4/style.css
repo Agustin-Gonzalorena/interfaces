@@ -2,6 +2,10 @@
   font-family: "Lato";
   src: url(./asset/Fonts/Lato-Black.ttf);
 }
+@font-face {
+  font-family: "LatoRegular";
+  src: url(./asset/Fonts/Lato-Regular.ttf);
+}
 * {
   margin: 0;
 }
@@ -241,7 +245,7 @@ main {
   position: relative; /* 
   background-color: red; */
   width: 100%;
-  height: 950px;
+  height: 850px;
   display: flex;
   justify-content: center;
   padding-top: 100px;
@@ -267,7 +271,8 @@ main {
   color: white;
 }
 .textS2 h2 {
-  font-family: "Lato";
+  width: 646px;
+  font-family: "LatoRegular";
   font-size: 60px;
   font-style: normal;
   font-weight: 600;
@@ -275,9 +280,15 @@ main {
   margin-bottom: 24px;
 }
 .textS2 p {
-  margin-bottom: 25px;
-  width: 580px;
+  width: 586px;
+  height: 154px;
+  color: #fff;
+  font-family: "LatoRegular";
   font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 25px;
 }
 
 .imgBoxS2 {
@@ -298,4 +309,128 @@ main {
   background-image: url(./asset/img/duendeVerde.png);
   top: -100px;
   right: -120px;
+}
+
+/*----section 3----*/
+.section3 {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+.centerS3 {
+  width: 1080px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 40.56px;
+  align-items: center;
+}
+.cardsPersonajes {
+  height: 544px;
+  width: 333px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 23.31px;
+}
+.cardsPersonajes div {
+  width: 332.96px;
+  height: 302.691px;
+  border-radius: 41px;
+  border: 9px solid var(--2982-ff, #2982ff);
+  /* Drop Shadow */
+  box-shadow: 4px 5px 0px 0px #02187e;
+  box-sizing: border-box;
+}
+.imgCardP1 {
+  background-image: url(./asset/img/cardP1.png);
+}
+.imgCardP2 {
+  background-image: url(./asset/img/cardP2.png);
+}
+.imgCardP3 {
+  background-image: url(./asset/img/cardP3.png);
+}
+.cardsPersonajes p {
+  width: 333px;
+  height: 218px;
+  color: #000;
+  font-family: "latoregular";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/*----section 3----*/
+.section4 {
+  height: 556px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.fondoS4 {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(0 0, 100% 10%, 100% 85%, 0% 100%);
+  background-image: url(./asset/img/db146801b9aff991f31a76cca012e799.png);
+  background-repeat: repeat-x;
+  background-position: 300px;
+}
+.centerS4 {
+  z-index: 2;
+  width: 1080px;
+  height: 100%; /* 
+  background-color: grey; */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.cardS4 {
+  width: 546.108px;
+  height: 326.509px; /* 
+  border: #203ec4 1px solid; */
+  position: absolute;
+  background-size: cover;
+}
+#ghosSpiderCard1 {
+  z-index: 2;
+  top: -90px;
+  transform: rotate(-13.078deg);
+  background-image: url(./asset/img/cardS41.png);
+}
+#ghosSpiderCard2 {
+  z-index: 3;
+  top: 90px;
+  background-image: url(./asset/img/cardS42.png);
+  transform: rotate(-26.474deg);
+}
+#ghosSpiderCard3 {
+  z-index: 4;
+  top: 335px;
+  background-image: url(./asset/img/cardS43.png);
+  transform: rotate(-36.016deg);
+}
+
+/*----section 5----*/
+.section5 {
+  width: 100%;
+  height: 984px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+.fondoS5 {
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  clip-path: polygon(0 8%, 100% 0, 100% 100%, 0 85%);
 }
