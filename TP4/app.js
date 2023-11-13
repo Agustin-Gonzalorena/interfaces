@@ -44,7 +44,9 @@ const sBlanco = document.querySelector(".boxSpiderBlanco");
 const sNegro = document.querySelector(".boxSpiderBlack");
 const sRojo = document.querySelector(".boxSpiderNormal");
 const boxBlur = document.querySelector(".boxBlur");
-const section8 = document.querySelector(".section8");
+const fondoBlanco = document.querySelector(".hoverSpiderBlanco");
+const fondoNegro = document.querySelector(".hoverSpiderBlack");
+const fondoRojo = document.querySelector(".hoverSpiderNormal");
 
 const arraySpider = [sBlanco, sNegro, sRojo];
 
@@ -58,13 +60,13 @@ const addHoverSpider = (spider) => {
   });
   switch (spider) {
     case sBlanco:
-      section8.classList.add("hoverSpiderBlanco");
-      break;
-    case sNegro:
-      section8.classList.add("hoverSpiderBlack");
+      fondoBlanco.classList.add("openFondoS8");
       break;
     case sRojo:
-      section8.classList.add("hoverSpiderNormal");
+      fondoRojo.classList.add("openFondoS8");
+      break;
+    case sNegro:
+      fondoNegro.classList.add("openFondoS8");
       break;
   }
 };
@@ -76,13 +78,13 @@ const removeHoverSpider = (spider) => {
   boxBlur.classList.remove("open");
   switch (spider) {
     case sBlanco:
-      section8.classList.remove("hoverSpiderBlanco");
-      break;
-    case sNegro:
-      section8.classList.remove("hoverSpiderBlack");
+      fondoBlanco.classList.remove("openFondoS8");
       break;
     case sRojo:
-      section8.classList.remove("hoverSpiderNormal");
+      fondoRojo.classList.remove("openFondoS8");
+      break;
+    case sNegro:
+      fondoNegro.classList.remove("openFondoS8");
       break;
   }
 };
@@ -103,4 +105,13 @@ sBlanco.addEventListener("mouseout", () => {
 });
 sNegro.addEventListener("mouseout", () => {
   removeHoverSpider(sNegro);
+});
+
+//popUp
+const btnCerrar = document.querySelector(".closePopUp");
+btnCerrar.addEventListener("click", () => {
+  document.querySelector(".popUp").classList.remove("open");
+});
+sRojo.addEventListener("click", () => {
+  document.querySelector(".popUp").classList.add("open");
 });
