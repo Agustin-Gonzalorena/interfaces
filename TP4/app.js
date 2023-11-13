@@ -37,3 +37,70 @@ document.addEventListener("scroll", () => {
     document.querySelector("#cardP3").classList.add("cardAnim");
   }
 });
+
+//conportamiento section 8
+
+const sBlanco = document.querySelector(".boxSpiderBlanco");
+const sNegro = document.querySelector(".boxSpiderBlack");
+const sRojo = document.querySelector(".boxSpiderNormal");
+const boxBlur = document.querySelector(".boxBlur");
+const section8 = document.querySelector(".section8");
+
+const arraySpider = [sBlanco, sNegro, sRojo];
+
+const addHoverSpider = (spider) => {
+  spider.classList.add("boxSpiderHover");
+  boxBlur.classList.add("open");
+  arraySpider.forEach((s) => {
+    if (s !== spider) {
+      s.classList.add("boxSpiderNoHover");
+    }
+  });
+  switch (spider) {
+    case sBlanco:
+      section8.classList.add("hoverSpiderBlanco");
+      break;
+    case sNegro:
+      section8.classList.add("hoverSpiderBlack");
+      break;
+    case sRojo:
+      section8.classList.add("hoverSpiderNormal");
+      break;
+  }
+};
+const removeHoverSpider = (spider) => {
+  arraySpider.forEach((s) => {
+    s.classList.remove("boxSpiderNoHover");
+    s.classList.remove("boxSpiderHover");
+  });
+  boxBlur.classList.remove("open");
+  switch (spider) {
+    case sBlanco:
+      section8.classList.remove("hoverSpiderBlanco");
+      break;
+    case sNegro:
+      section8.classList.remove("hoverSpiderBlack");
+      break;
+    case sRojo:
+      section8.classList.remove("hoverSpiderNormal");
+      break;
+  }
+};
+sBlanco.addEventListener("mouseover", () => {
+  addHoverSpider(sBlanco);
+});
+sRojo.addEventListener("mouseover", () => {
+  addHoverSpider(sRojo);
+});
+sNegro.addEventListener("mouseover", () => {
+  addHoverSpider(sNegro);
+});
+sRojo.addEventListener("mouseout", () => {
+  removeHoverSpider(sRojo);
+});
+sBlanco.addEventListener("mouseout", () => {
+  removeHoverSpider(sBlanco);
+});
+sNegro.addEventListener("mouseout", () => {
+  removeHoverSpider(sNegro);
+});

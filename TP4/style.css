@@ -349,13 +349,13 @@ main {
   box-sizing: border-box;
 }
 #cardP1 {
-  transition-delay: 0.5s;
+  transition-delay: 0s;
 }
 #cardP2 {
-  transition-delay: 0.7s;
+  transition-delay: 0.2s;
 }
 #cardP3 {
-  transition-delay: 0.9s;
+  transition-delay: 0.4s;
 }
 .cardAnim {
   opacity: 1;
@@ -536,8 +536,8 @@ main {
   height: auto;
   display: flex;
   justify-content: center;
-  margin-bottom: 50px;
-  background-color: red;
+  margin-bottom: 70px;
+  /* background-color: red; */
 }
 .centerS6 {
   width: 1080px;
@@ -545,19 +545,27 @@ main {
   display: flex;
   flex-direction: column;
   align-items: start;
-  background-color: violet;
+  /* background-color: violet; */
+}
+.centerS6 h2 {
+  font-family: "latoregular";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 94.5%;
+  margin-bottom: 62px;
 }
 .contenidoS6 {
   width: 100%;
   height: 1650px;
   display: flex;
   justify-content: space-between;
-  background-color: #02187e;
+  /* background-color: #02187e; */
 }
 .boxImgS6 {
   width: 552px;
   height: 1650px;
-  background-color: #027e02;
+  /* background-color: #027e02; */
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -566,8 +574,8 @@ main {
   width: 100%;
   height: auto;
   position: sticky;
-  top: 300px;
-  background-color: #2981ff;
+  top: 35%;
+  /* background-color: #2981ff; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -576,13 +584,14 @@ main {
   width: 100%;
   height: 302px;
   border: #000 solid 1px;
+  background-image: url(./asset/img/s6-1.png);
 }
 .boxTexto {
   position: relative;
   left: 601px;
   width: 467px;
   height: auto;
-  background-color: #ffe901;
+  /* background-color: #ffe901; */
   display: flex;
   flex-direction: column;
   gap: 150px;
@@ -591,5 +600,128 @@ main {
 .boxTexto div {
   width: 100%;
   height: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.boxTexto h3 {
+  width: 467px;
+  font-family: "latoregular";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 94.5%;
+}
+.boxTexto p {
+  width: 467px;
+  font-family: "latoregular";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 94.5%;
+}
+
+/*----section 7----*/
+.section7 {
+  width: 100%;
+  height: 477px;
   background-color: #000;
+  clip-path: polygon(0 0, 100% 20%, 100% 75%, 0 100%);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.centerS7 {
+  width: 1080px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 42px;
+}
+.centerS7 h2 {
+  width: 816px;
+  color: #fff;
+  font-family: "latoregular";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.centerS7 button {
+  width: 292px;
+  height: 50px;
+}
+
+/*----section 8----*/
+.section8 {
+  width: 100%;
+  height: 870px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  position: relative;
+  z-index: 2;
+  top: -155px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: none;
+  transition: all 0.3s ease;
+}
+.section8.hoverSpiderBlanco {
+  background-image: url(./asset/img/hoverBlanco.png);
+}
+.section8.hoverSpiderNormal {
+  background-image: url(./asset/img/hoverNormal.png);
+}
+.section8.hoverSpiderBlack {
+  background-image: url(./asset/img/hoverBlack.png);
+}
+.centerS8 {
+  width: 1080px;
+  height: 570px;
+  /* background-color: #02187e; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 25px;
+  position: relative;
+}
+.boxSpiderBlanco {
+  width: 268px;
+  height: 416.5px;
+  background-image: url(./asset/img/s8-spiderBlanco.svg);
+  transition: all 0.3s ease;
+  /*  z-index: 2; */
+}
+.boxSpiderNormal {
+  width: 416.5px;
+  height: 457.5px;
+  background-image: url(./asset/img/s8-spiderNormal.svg);
+  transition: all 0.3s ease;
+}
+.boxSpiderBlack {
+  width: 313.5px;
+  height: 398.5px;
+  background-image: url(./asset/img/s8-spiderBlack.svg);
+  transition: all 0.3s ease;
+}
+.boxSpiderHover {
+  scale: 1.2;
+  cursor: pointer;
+  z-index: 2;
+}
+.boxSpiderNoHover {
+  scale: 0.8;
+}
+.boxBlur {
+  z-index: -1;
+}
+.boxBlur.open {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  z-index: 1;
 }
