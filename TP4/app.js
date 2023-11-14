@@ -1,3 +1,9 @@
+import {
+  PopUpBlanco,
+  PopUpNegro,
+  PopUpRojo,
+} from "./Components/PopUp/PopUp.js";
+
 const btnBurger = document.querySelector(".burgerBtn");
 
 btnBurger.addEventListener("mouseover", () => {
@@ -108,10 +114,21 @@ sNegro.addEventListener("mouseout", () => {
 });
 
 //popUp
+
 const btnCerrar = document.querySelector(".closePopUp");
 btnCerrar.addEventListener("click", () => {
   document.querySelector(".popUp").classList.remove("open");
 });
+
 sRojo.addEventListener("click", () => {
   document.querySelector(".popUp").classList.add("open");
+  PopUpRojo();
+});
+sBlanco.addEventListener("click", () => {
+  document.querySelector(".popUp").classList.add("open");
+  PopUpBlanco();
+});
+sNegro.addEventListener("click", () => {
+  document.querySelector(".popUp").classList.add("open");
+  PopUpNegro();
 });
