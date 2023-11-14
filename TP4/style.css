@@ -813,17 +813,6 @@ main {
 .closePopUp:active {
   scale: 0.9;
 }
-/* ---Para que no se rompa en la notebook--- */
-@media screen and (max-height: 800px) {
-  .popUp {
-    height: calc(100vh - 100px);
-  }
-  .textPopUp {
-    width: 744px;
-    height: 100%;
-    overflow-y: scroll;
-  }
-}
 
 /*----section 9----*/
 .section9 {
@@ -848,4 +837,15 @@ footer {
   width: 100%;
   height: 678px;
   background-color: #5e5e5d;
+}
+/* ---Para que no se rompa en la notebook--- */
+@media screen and (max-height: 800px) {
+  .popUp {
+    height: calc(100vh - 100px);
+  }
+  .textPopUp {
+    width: 744px;
+    height: 100%;
+    overflow-y: scroll;
+  }
 }
