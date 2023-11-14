@@ -162,6 +162,7 @@ main {
 .edificioCen {
   width: 543.5px;
   height: 213.5px;
+
   background-image: url(./asset/img/edificioCen.svg);
   position: absolute;
   z-index: 1;
@@ -374,7 +375,7 @@ main {
   width: 333px;
   height: 218px;
   color: #000;
-  font-family: "latoregular";
+  font-family: "LatoRegular";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -463,7 +464,7 @@ main {
 .centerS5 h2 {
   width: 667px;
   color: #fff;
-  font-family: "latoregular";
+  font-family: "LatoRegular";
   font-size: 60px;
   font-style: normal;
   font-weight: 600;
@@ -548,7 +549,7 @@ main {
   /* background-color: violet; */
 }
 .centerS6 h2 {
-  font-family: "latoregular";
+  font-family: "LatoRegular";
   font-size: 60px;
   font-style: normal;
   font-weight: 600;
@@ -606,7 +607,7 @@ main {
 }
 .boxTexto h3 {
   width: 467px;
-  font-family: "latoregular";
+  font-family: "LatoRegular";
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
@@ -614,7 +615,7 @@ main {
 }
 .boxTexto p {
   width: 467px;
-  font-family: "latoregular";
+  font-family: "LatoRegular";
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -643,7 +644,7 @@ main {
 .centerS7 h2 {
   width: 816px;
   color: #fff;
-  font-family: "latoregular";
+  font-family: "LatoRegular";
   font-size: 60px;
   font-style: normal;
   font-weight: 400;
@@ -753,7 +754,7 @@ main {
 }
 .popUp.open {
   position: fixed;
-  z-index: 9;
+  z-index: 8;
   opacity: 1;
 }
 .centerPopUp {
@@ -821,9 +822,15 @@ main {
   background-image: url(./asset/img/fondoS9.svg);
   background-size: cover;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 150px;
+  box-sizing: border-box;
 }
 .fondoCiudadS9 {
   position: absolute;
+  z-index: 0;
   bottom: 0;
   width: 100%;
   height: 720px;
@@ -831,12 +838,151 @@ main {
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
+.centerS9 {
+  width: 1080px;
+  height: 615px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.centerS9 h2 {
+  width: 816px;
+  text-align: center;
+  font-family: "LatoRegular";
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 94.5%;
+  margin-bottom: 46px;
+}
+.boxInput {
+  height: 100px;
+  width: 780px;
+  margin-bottom: 39px;
+  display: flex;
+}
+.boxInput input {
+  width: 562px;
+  height: 100px;
+  border-radius: 50px 0px 0px 50px;
+  border-top: 9px solid #2982ff;
+  border-bottom: 9px solid #2982ff;
+  border-left: 9px solid #2982ff;
+  background: #fff;
+  box-shadow: 4px 5px 0px 0px #02187e;
+  box-sizing: border-box;
+}
+.boxInput input::placeholder {
+  color: rgba(0, 0, 0, 0.39);
+  font-family: "LatoRegular";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 94.5%;
+  letter-spacing: 2.2px;
+  padding-left: 40px;
+}
+.send {
+  width: 218px;
+  height: 100px;
+  border-radius: 0px 50px 50px 0px;
+  border: 9px solid #2982ff;
+  background: #ffe901;
+  box-shadow: 4px 5px 0px 0px #02187e;
+  color: #02187e;
+  font-family: "Lato";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 94.5%;
+  letter-spacing: 2.2px;
+}
+.send:hover {
+  cursor: pointer;
+}
+.boxDescription {
+  width: 700px;
+  height: 257px;
+}
+.boxDescription p {
+  width: 578px;
+  height: 95px;
+  font-family: "LatoRegular";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 94.5%;
+}
+.boxDescription p span {
+  text-decoration: underline;
+}
+.imgDescription {
+  width: 231px;
+  height: 145px;
+  background-image: url(./asset/img/imgS9.png);
+}
+.centerSpritesheets {
+  z-index: 1;
+  width: 1080px;
+  height: 500px;
+  border: 1px solid black;
+  display: grid;
+  place-content: center;
+}
 
 /*----footer----*/
 footer {
   width: 100%;
   height: 678px;
   background-color: #5e5e5d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.boxConsolas {
+  width: 100%;
+  height: 80px;
+  background-color: #242424;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 38px;
+}
+.consolas {
+  width: 1080px;
+  height: 100%;
+  background-image: url(./asset/img/consolas.png);
+}
+.centerFooter {
+  width: 1080px;
+  height: 100%;
+  color: #fff;
+}
+.centerFooter p {
+  width: 820px;
+  font-family: "LatoRegular";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 94.5%;
+  letter-spacing: 2.2px;
+  margin-bottom: 15px;
+}
+.centerFooter a {
+  color: #fff;
+  font-family: "LatoRegular";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 94.5%;
+  letter-spacing: 2.2px;
+  margin-right: 3px;
+}
+.redes {
+  margin-top: 38px;
+  width: 212px;
+  height: 41px;
+  background-image: url(./asset/img/redes.png);
 }
 /* ---Para que no se rompa en la notebook--- */
 @media screen and (max-height: 800px) {
