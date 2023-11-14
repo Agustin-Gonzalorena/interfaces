@@ -951,6 +951,11 @@ main {
   display: grid;
   place-content: center;
 }
+.sp1 {
+  height: 100%;
+  width: 100%;
+  background-color: #02187e;
+}
 
 /*----footer----*/
 footer {

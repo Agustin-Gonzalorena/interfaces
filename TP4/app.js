@@ -53,12 +53,12 @@ document.addEventListener("scroll", () => {
       s.classList.remove("showTextoS6");
     });
   }
-  if (window.scrollY < 4000) {
+  if (window.scrollY < 4080) {
     clean();
     document.querySelector("#imgS6-1").classList.add("showImgS6");
     document.querySelector("#textS6-1").classList.add("showTextoS6");
   }
-  if (window.scrollY > 4000 && window.screenY < 4450) {
+  if (window.scrollY > 4080 && window.screenY < 4450) {
     clean();
     document.querySelector("#imgS6-2").classList.add("showImgS6");
     document.querySelector("#textS6-2").classList.add("showTextoS6");
