@@ -18,7 +18,7 @@
 .boxLoading {
   height: 500px;
   position: relative;
-  animation: balanceo 3s linear;
+  animation: balanceo 4s linear;
   transform-origin: 70% 0;
 }
 
@@ -45,7 +45,7 @@
   top: 80%;
   left: -50px;
 
-  animation: acomodarLineas 5s linear; /* 
+  animation: acomodarLineas 4s linear; /* 
     animation-delay: 2.5s; */
 }
 .lines {
