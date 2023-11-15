@@ -5,9 +5,7 @@ import {
 } from "./Components/PopUp/PopUp.js";
 
 const btnBurger = document.querySelector(".burgerBtn");
-
 btnBurger.addEventListener("mouseover", () => {
-  console.log("hola");
   document.querySelectorAll(".lineBurger").forEach((line) => {
     line.classList.add("hover");
   });
@@ -35,6 +33,61 @@ document.addEventListener("scroll", () => {
   logo.style.scale = 1 - window.scrollY / 200;
 });
 
+//comportamiento section 1
+const eI = document.querySelector(".edificioIzq");
+const eD = document.querySelector(".edificioDer");
+const eC = document.querySelector(".edificioCen");
+const sB = document.querySelector(".spiderWhite");
+const sR = document.querySelector(".spiderNormal");
+const sN = document.querySelector(".spiderBlack");
+const tD = document.querySelector(".telaDer");
+const tI = document.querySelector(".telaIzq");
+const componentsS1 = [eI, eD, eC, sB, sR, sN, tD, tI, logo];
+//cuando termina el loading
+export const cargar = () => {
+  componentsS1.forEach((c) => {
+    c.classList.remove("close");
+  });
+};
+/* setTimeout(cargar, 2000); */
+//paralax
+document.addEventListener("scroll", () => {
+  const componentsS1 = [eI, eD, eC, sB, sR, sN, tD, tI, logo];
+  componentsS1.forEach((c) => {
+    c.style.transition = "none";
+  });
+  eI.style.transform = `translateX(${-window.scrollY * 0.2}px)`;
+  eD.style.transform = `translateX(${window.scrollY * 0.2}px)`;
+  eC.style.transform = `scale(${1 + window.scrollY * 0.0005})`;
+
+  sB.style.transform = `translateY(${-window.scrollY * 0.5}px) translateX(${
+    -window.scrollY * 0.5
+  }px)`;
+
+  sN.style.transform = `translateY(${-window.scrollY * 0.5}px) translateX(${
+    window.scrollY * 0.5
+  }px)`;
+  tD.style.transform = `translateY(${-window.scrollY * 0.5}px) translateX(${
+    window.scrollY * 0.5
+  }px) rotate(114.597deg)`;
+
+  sR.style.transform = `translateY(${-window.scrollY * 0.8}px)`;
+  tI.style.transform = `translateY(${
+    -window.scrollY * 0.8
+  }px) rotate(65.403deg)`;
+});
+//comportamiento section 2
+const duendeVerde = document.querySelector(".duendeVerde");
+window.addEventListener("scroll", function () {
+  const pos = duendeVerde.getBoundingClientRect(); //devuelve la posicion
+  const desplazamiento = window.scrollY;
+  if (pos.top < window.innerHeight && pos.bottom > 0) {
+    duendeVerde.style.transform = `translateY(${
+      (desplazamiento - pos.top) * 0.027
+    }px)`;
+  }
+});
+//comportamiento section 3
 document.addEventListener("scroll", () => {
   console.log(window.scrollY);
   if (window.scrollY > 1400) {
@@ -43,6 +96,9 @@ document.addEventListener("scroll", () => {
     document.querySelector("#cardP3").classList.add("cardAnim");
   }
 });
+
+//comportamiento section 4
+
 //comportamiento section 6
 document.addEventListener("scroll", () => {
   function clean() {
@@ -74,8 +130,8 @@ document.addEventListener("scroll", () => {
     document.querySelector("#textS6-4").classList.add("showTextoS6");
   }
 });
-//conportamiento section 8
 
+//conportamiento section 8
 const sBlanco = document.querySelector(".boxSpiderBlanco");
 const sNegro = document.querySelector(".boxSpiderBlack");
 const sRojo = document.querySelector(".boxSpiderNormal");
@@ -143,8 +199,7 @@ sNegro.addEventListener("mouseout", () => {
   removeHoverSpider(sNegro);
 });
 
-//popUp
-
+//comportamiento popUp
 const btnCerrar = document.querySelector(".closePopUp");
 btnCerrar.addEventListener("click", () => {
   document.querySelector(".popUp").classList.remove("open");

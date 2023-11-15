@@ -18,7 +18,7 @@
 .boxLoading {
   height: 500px;
   position: relative;
-  animation: balanceo 5s linear;
+  animation: balanceo 3s linear;
   transform-origin: 70% 0;
 }
 

@@ -158,15 +158,27 @@ main {
   z-index: 1;
   left: -53px;
   bottom: 0;
+  opacity: 1;
+  transition: all 0.3s ease-in;
+  transition-delay: 0.2s;
+}
+.edificioIzq.close {
+  left: -100px;
+  opacity: 0;
 }
 .edificioCen {
   width: 543.5px;
   height: 213.5px;
-
   background-image: url(./asset/img/edificioCen.svg);
   position: absolute;
   z-index: 1;
   bottom: 15px;
+  opacity: 1;
+  transition: all 0.3s ease-in;
+}
+.edificioCen.close {
+  bottom: -40px;
+  opacity: 0;
 }
 .edificioDer {
   width: 374px;
@@ -176,12 +188,27 @@ main {
   z-index: 1;
   right: 0;
   bottom: 0;
+  opacity: 1;
+  transition: all 0.3s ease-in;
+  transition-delay: 0.2s;
+}
+.edificioDer.close {
+  right: -100px;
+  opacity: 0;
 }
 .logoBox {
   width: 590px;
   height: 301px;
   position: relative;
   z-index: 10;
+  opacity: 1;
+  scale: 1;
+  transition: all 0.4s ease-in;
+  transition-delay: 0.9s;
+}
+.logoBox.close {
+  scale: 0.1;
+  opacity: 0;
 }
 .logoBox img {
   width: 100%;
@@ -203,6 +230,14 @@ main {
   width: 360px;
   height: 444px;
   background-image: url(./asset/img/1-spidermanWhite.png);
+  opacity: 1;
+  transition: all 0.3s ease-in;
+  transition-delay: 0.4s;
+}
+.spiderWhite.close {
+  top: -100px;
+  left: -100px;
+  opacity: 0;
 }
 .spiderNormal {
   position: relative;
@@ -211,6 +246,13 @@ main {
   height: 465px;
   width: 465px;
   background-image: url(./asset/img/1-spidermanNormal.png);
+  opacity: 1;
+  transition: all 0.3s ease-in;
+  transition-delay: 0.7s;
+}
+.spiderNormal.close {
+  top: 200px;
+  opacity: 0;
 }
 .spiderBlack {
   position: absolute;
@@ -219,6 +261,14 @@ main {
   height: 393px;
   width: 393px;
   background-image: url(./asset/img/1-spidermanBlack.png);
+  opacity: 1;
+  transition: all 0.3s ease-in;
+  transition-delay: 0.5s;
+}
+.spiderBlack.close {
+  top: -100px;
+  left: 700px;
+  opacity: 0;
 }
 .telaIzq {
   position: absolute;
@@ -231,6 +281,12 @@ main {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   z-index: 4;
+  transition: all 0.3s ease-in;
+  transition-delay: 0.7s;
+}
+.telaIzq.close {
+  top: 200px;
+  opacity: 0;
 }
 .telaDer {
   position: absolute;
@@ -240,6 +296,14 @@ main {
   transform: rotate(114.597deg);
   top: -430px;
   left: 1345px;
+  opacity: 1;
+  transition: all 0.4s ease-in;
+  transition-delay: 0.6s;
+}
+.telaDer.close {
+  left: 1345px;
+  top: -400;
+  opacity: 0;
 }
 /*----section 2----*/
 .section2 {
@@ -948,13 +1012,42 @@ main {
   width: 1080px;
   height: 500px;
   border: 1px solid black;
-  display: grid;
-  place-content: center;
+  display: flex;
+  justify-content: space-between;
 }
-.sp1 {
+.boxSprite {
+  width: 50%;
   height: 100%;
-  width: 100%;
-  background-color: #02187e;
+}
+.sprite1 {
+  position: relative;
+  left: 200px;
+  top: 300px;
+  width: 96px;
+  height: 80px;
+  background-image: url(./asset/img/spriteSpider1.png);
+  background-size: cover;
+  animation: spriteAnimation1 1s steps(6) infinite;
+}
+.sprite1:hover {
+  background-image: url(./asset/img/hoverSprite1.png);
+  cursor: pointer;
+}
+@keyframes hoverSprite1 {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: 336px;
+  }
+}
+@keyframes spriteAnimation1 {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: 576px;
+  }
 }
 
 /*----footer----*/

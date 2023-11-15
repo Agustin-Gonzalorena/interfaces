@@ -1,3 +1,4 @@
+import { cargar } from "../app.js";
 let loading = true;
 
 const divLoading = document.querySelector(".layerLoading");
@@ -5,7 +6,7 @@ const divLoading = document.querySelector(".layerLoading");
 setTimeout(() => {
   loading = false;
   divLoading.classList.add("close");
-}, 5000);
+}, 3000);
 
 function loadingTimer() {
   let count = document.querySelector("#porcentaje");
@@ -19,10 +20,12 @@ function loadingTimer() {
   async function updateProgressBar() {
     for (let i = 0; i <= 100; i++) {
       count.innerHTML = `<strong> %${i}</strong>`;
-      await delay(50); // Esperar 50 ms antes de la siguiente iteración
+      await delay(30); // Esperar 50 ms antes de la siguiente iteración
     }
   }
 
-  updateProgressBar().then(() => {});
+  updateProgressBar().then(() => {
+    cargar();
+  });
 }
 loadingTimer();
