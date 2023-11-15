@@ -1011,7 +1011,7 @@ main {
   z-index: 1;
   width: 1080px;
   height: 500px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   display: flex;
   justify-content: space-between;
 }
@@ -1021,10 +1021,10 @@ main {
 }
 .sprite1 {
   position: relative;
-  left: 200px;
-  top: 300px;
-  width: 96px;
-  height: 80px;
+  left: 400px;
+  top: 75%;
+  width: 192px;
+  height: 160px;
   background-image: url(./asset/img/spriteSpider1.png);
   background-size: cover;
   animation: spriteAnimation1 1s steps(6) infinite;
@@ -1033,20 +1033,12 @@ main {
   background-image: url(./asset/img/hoverSprite1.png);
   cursor: pointer;
 }
-@keyframes hoverSprite1 {
-  0% {
-    background-position: 0px;
-  }
-  100% {
-    background-position: 336px;
-  }
-}
 @keyframes spriteAnimation1 {
   0% {
     background-position: 0px;
   }
   100% {
-    background-position: 576px;
+    background-position: 1152px;
   }
 }
 
