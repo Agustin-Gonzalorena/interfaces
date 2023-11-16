@@ -123,19 +123,21 @@ const flacucho = document.querySelector(".flacucho");
 const hulk = document.querySelector(".hulk");
 const hojitas = document.querySelector(".hojitas");
 const bosque = document.querySelector(".fondoS5-2");
+//saber la posicion de x de la pantera
+
 section5.addEventListener("mousemove", (e) => {
   let posX = e.clientX;
   let posY = e.clientY;
-  pantera.style.transform = `translateX(${-posX * 0.05}px) translateY(${
+  pantera.style.transform = `translateX(${posX * 0.05}px) translateY(${
     posY * 0.05
-  }px) `;
+  }px) rotate(13.615deg)`;
   flacucho.style.transform = `translateX(${20 + posX * 0.02}px) translateY(${
     posY * 0.02
-  }px) `;
+  }px) rotate(-12.483deg)`;
   hulk.style.transform = `translateX(${-posX * 0.02}px) translateY(${
     -20 + posY * 0.02
-  }px) `;
-  hojitas.style.transform = `scale(${1 + posY * 0.00002})`;
+  }px) rotate(7.515deg)`;
+  hojitas.style.transform = `scale(${1 + posY * 0.00002}) `;
   bosque.style.transform = `translateX(${-posX * 0.005}px) scale(${
     1 + posY * 0.00002
   })`;

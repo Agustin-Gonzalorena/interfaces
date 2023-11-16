@@ -550,6 +550,7 @@ main {
   width: 100%;
   height: 527.626px;
   display: flex;
+  transition: all 0.2s ease-in;
 }
 .fondoS5-1 {
   position: absolute;
