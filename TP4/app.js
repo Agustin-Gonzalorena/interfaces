@@ -89,7 +89,6 @@ window.addEventListener("scroll", function () {
 });
 //comportamiento section 3
 document.addEventListener("scroll", () => {
-  console.log(window.scrollY);
   if (window.scrollY > 1400) {
     document.querySelector("#cardP1").classList.add("cardAnim");
     document.querySelector("#cardP2").classList.add("cardAnim");
@@ -98,7 +97,49 @@ document.addEventListener("scroll", () => {
 });
 
 //comportamiento section 4
-
+const section4 = document.querySelector(".section4");
+const c1 = document.querySelector("#ghosSpiderCard1");
+const c2 = document.querySelector("#ghosSpiderCard2");
+const c3 = document.querySelector("#ghosSpiderCard3");
+window.addEventListener("scroll", function () {
+  const pos = section4.getBoundingClientRect(); //devuelve la posicion
+  const desplazamiento = window.scrollY;
+  if (pos.top < window.innerHeight && pos.bottom > 0) {
+    c1.style.transform = `translateY(${
+      (desplazamiento - pos.top) * 0.027
+    }px) rotate(-13.078deg)`;
+    c2.style.transform = `translateY(${
+      (desplazamiento - pos.top) * 0.027
+    }px) rotate(-26.474deg)`;
+    c3.style.transform = `translateY(${
+      (desplazamiento - pos.top) * 0.007
+    }px) rotate(-36.016deg)`;
+  }
+});
+//comportamiento section 5
+const section5 = document.querySelector(".boxParalax");
+const pantera = document.querySelector(".panteraNegra");
+const flacucho = document.querySelector(".flacucho");
+const hulk = document.querySelector(".hulk");
+const hojitas = document.querySelector(".hojitas");
+const bosque = document.querySelector(".fondoS5-2");
+section5.addEventListener("mousemove", (e) => {
+  let posX = e.clientX;
+  let posY = e.clientY;
+  pantera.style.transform = `translateX(${-posX * 0.05}px) translateY(${
+    posY * 0.05
+  }px) `;
+  flacucho.style.transform = `translateX(${20 + posX * 0.02}px) translateY(${
+    posY * 0.02
+  }px) `;
+  hulk.style.transform = `translateX(${-posX * 0.02}px) translateY(${
+    -20 + posY * 0.02
+  }px) `;
+  hojitas.style.transform = `scale(${1 + posY * 0.00002})`;
+  bosque.style.transform = `translateX(${-posX * 0.005}px) scale(${
+    1 + posY * 0.00002
+  })`;
+});
 //comportamiento section 6
 document.addEventListener("scroll", () => {
   function clean() {

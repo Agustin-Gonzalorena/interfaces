@@ -476,6 +476,11 @@ main {
   height: 326.509px;
   position: absolute;
   background-size: cover;
+  transition: all 0.2s ease-in;
+}
+.cardS4:hover {
+  cursor: pointer;
+  scale: 1.1;
 }
 #ghosSpiderCard1 {
   z-index: 2;
@@ -483,11 +488,17 @@ main {
   transform: rotate(-13.078deg);
   background-image: url(./asset/img/cardS41.png);
 }
+#ghosSpiderCard1:hover {
+  z-index: 9;
+}
 #ghosSpiderCard2 {
   z-index: 3;
   top: 90px;
   background-image: url(./asset/img/cardS42.png);
   transform: rotate(-26.474deg);
+}
+#ghosSpiderCard2:hover {
+  z-index: 9;
 }
 #ghosSpiderCard3 {
   z-index: 4;
@@ -594,7 +605,13 @@ main {
   background-image: url(./asset/img/fondoS5-3.png);
   background-size: cover;
 }
-
+.boxParalax {
+  width: 100%;
+  height: 100%; /* 
+  background-color: red; */
+  position: absolute;
+  z-index: 6;
+}
 /*----section 6----*/
 .section6 {
   width: 100%;
